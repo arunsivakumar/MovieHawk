@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -70,7 +71,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="movieImageView" destination="6X4-1k-U7b" id="MGN-XM-uhE"/>
-                                            <segue destination="kLR-VV-l57" kind="show" identifier="showMovie" id="DKX-h5-tED"/>
+                                            <segue destination="kLR-VV-l57" kind="presentation" identifier="showMovie" modalTransitionStyle="coverVertical" id="DKX-h5-tED"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -106,39 +107,77 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f2F-FI-GiV">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="551"/>
                             </imageView>
                             <visualEffectView opaque="NO" alpha="0.65000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zQ6-BM-PYk">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="551"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="9Ka-64-qhR">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="551"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
                                 <color key="backgroundColor" red="0.4039215686" green="0.39607843139999999" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <blurEffect style="light"/>
                             </visualEffectView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jLP-ln-fVa">
-                                <rect key="frame" x="20" y="96" width="335" height="474"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jLP-ln-fVa">
+                                <rect key="frame" x="36" y="84" width="303" height="511"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g1r-ZW-ccg">
+                                <rect key="frame" x="0.0" y="615" width="375" height="52"/>
+                                <color key="backgroundColor" red="1" green="0.87662575133347986" blue="0.480022329169564" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="sZM-uC-TDc"/>
+                                </constraints>
+                                <state key="normal" title="Watch Now">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iua-dG-rlz">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJT-M0-uZK">
+                                        <rect key="frame" x="12" y="17" width="39" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Close"/>
+                                        <connections>
+                                            <action selector="close:" destination="kLR-VV-l57" eventType="touchUpInside" id="ZFM-mH-gEh"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="Qkw-C2-5A6"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="zQ6-BM-PYk" firstAttribute="height" secondItem="f2F-FI-GiV" secondAttribute="height" id="HGI-By-RGp"/>
-                            <constraint firstItem="zQ6-BM-PYk" firstAttribute="centerY" secondItem="f2F-FI-GiV" secondAttribute="centerY" id="NGa-mf-Xcp"/>
-                            <constraint firstItem="f2F-FI-GiV" firstAttribute="leading" secondItem="NQB-UC-lmZ" secondAttribute="leading" id="Ub8-Sx-hC3"/>
-                            <constraint firstItem="f2F-FI-GiV" firstAttribute="top" secondItem="1z9-37-hsH" secondAttribute="bottom" id="fKj-Pr-CbX"/>
-                            <constraint firstItem="f2F-FI-GiV" firstAttribute="bottom" secondItem="JPi-4P-MeZ" secondAttribute="top" id="gTj-Lz-sXC"/>
-                            <constraint firstAttribute="trailing" secondItem="f2F-FI-GiV" secondAttribute="trailing" id="hCf-MW-hzr"/>
-                            <constraint firstItem="zQ6-BM-PYk" firstAttribute="centerX" secondItem="f2F-FI-GiV" secondAttribute="centerX" id="vqM-B2-hWt"/>
-                            <constraint firstItem="zQ6-BM-PYk" firstAttribute="width" secondItem="f2F-FI-GiV" secondAttribute="width" id="zlh-43-fy9"/>
+                            <constraint firstItem="zQ6-BM-PYk" firstAttribute="top" secondItem="f2F-FI-GiV" secondAttribute="top" id="6PQ-XD-Urg"/>
+                            <constraint firstItem="zQ6-BM-PYk" firstAttribute="leading" secondItem="g1r-ZW-ccg" secondAttribute="leading" id="HnB-Fj-n2H"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jLP-ln-fVa" secondAttribute="trailing" constant="20" id="Iqj-nq-Zpv"/>
+                            <constraint firstItem="g1r-ZW-ccg" firstAttribute="leading" secondItem="NQB-UC-lmZ" secondAttribute="leading" id="LNY-l2-rxp"/>
+                            <constraint firstItem="zQ6-BM-PYk" firstAttribute="centerX" secondItem="f2F-FI-GiV" secondAttribute="centerX" id="MIa-vf-icT"/>
+                            <constraint firstAttribute="trailing" secondItem="g1r-ZW-ccg" secondAttribute="trailing" id="NAG-SJ-oNe"/>
+                            <constraint firstAttribute="trailing" secondItem="iua-dG-rlz" secondAttribute="trailing" id="RbZ-sp-nn9"/>
+                            <constraint firstItem="zQ6-BM-PYk" firstAttribute="bottom" secondItem="f2F-FI-GiV" secondAttribute="bottom" id="TXA-er-Wqm"/>
+                            <constraint firstItem="f2F-FI-GiV" firstAttribute="trailing" secondItem="g1r-ZW-ccg" secondAttribute="trailing" id="Zc5-zD-Vqi"/>
+                            <constraint firstItem="iua-dG-rlz" firstAttribute="leading" secondItem="NQB-UC-lmZ" secondAttribute="leading" id="bgB-h8-Q3h"/>
+                            <constraint firstItem="zQ6-BM-PYk" firstAttribute="centerY" secondItem="f2F-FI-GiV" secondAttribute="centerY" id="eTL-hd-oZV"/>
+                            <constraint firstItem="JPi-4P-MeZ" firstAttribute="top" secondItem="g1r-ZW-ccg" secondAttribute="bottom" id="fDw-e2-Tyi"/>
+                            <constraint firstItem="iua-dG-rlz" firstAttribute="top" secondItem="1z9-37-hsH" secondAttribute="bottom" constant="-20" id="hGL-Dg-oZX"/>
+                            <constraint firstItem="g1r-ZW-ccg" firstAttribute="top" secondItem="jLP-ln-fVa" secondAttribute="bottom" constant="20" id="jdC-Bg-9p4"/>
+                            <constraint firstItem="f2F-FI-GiV" firstAttribute="leading" secondItem="g1r-ZW-ccg" secondAttribute="leading" id="mV8-nE-lJu"/>
+                            <constraint firstItem="jLP-ln-fVa" firstAttribute="leading" secondItem="NQB-UC-lmZ" secondAttribute="leadingMargin" constant="20" id="qJP-jR-Am7"/>
+                            <constraint firstItem="g1r-ZW-ccg" firstAttribute="top" secondItem="f2F-FI-GiV" secondAttribute="bottom" id="sU9-NA-bzB"/>
+                            <constraint firstItem="jLP-ln-fVa" firstAttribute="top" secondItem="iua-dG-rlz" secondAttribute="bottom" constant="20" id="u2z-33-BIU"/>
+                            <constraint firstItem="f2F-FI-GiV" firstAttribute="top" secondItem="iua-dG-rlz" secondAttribute="bottom" id="vTm-on-JR8"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <connections>
                         <outlet property="movieImageView" destination="f2F-FI-GiV" id="jOC-rJ-teg"/>
                     </connections>

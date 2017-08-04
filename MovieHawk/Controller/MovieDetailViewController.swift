@@ -29,6 +29,9 @@ class MovieDetailViewController: UIViewController {
 
         movieImageView.kf.setImage(with: movie.posterURL)
     }
+    @IBAction func close(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
 
     
 }
