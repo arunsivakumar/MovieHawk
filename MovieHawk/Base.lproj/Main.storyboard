@@ -42,10 +42,31 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="1VD-cN-tF7"/>
+                    <connections>
+                        <segue destination="kLR-VV-l57" kind="show" id="H1J-Cl-j0q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l1x-2t-gD5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="158" y="1039"/>
+            <point key="canvasLocation" x="158" y="1065"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="81w-XD-7ME">
+            <objects>
+                <viewController id="kLR-VV-l57" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1z9-37-hsH"/>
+                        <viewControllerLayoutGuide type="bottom" id="JPi-4P-MeZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NQB-UC-lmZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3At-vM-vu9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-282" y="1907"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="hoY-vE-mQE">
@@ -66,10 +87,10 @@
             </objects>
             <point key="canvasLocation" x="118" y="-450"/>
         </scene>
-        <!--Home View Controller-->
+        <!--Movie Feed View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="MovieHawk" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MovieFeedViewController" customModule="MovieHawk" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -80,10 +101,13 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="Xqb-li-WcB"/>
+                    <connections>
+                        <segue destination="kLR-VV-l57" kind="show" id="pJu-O8-wwC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-849" y="1034"/>
+            <point key="canvasLocation" x="-866" y="1077"/>
         </scene>
         <!--Feed-->
         <scene sceneID="8JU-kg-EJf">
@@ -143,4 +167,7 @@
             <point key="canvasLocation" x="968.79999999999995" y="367.46626686656674"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="H1J-Cl-j0q"/>
+    </inferredMetricsTieBreakers>
 </document>
