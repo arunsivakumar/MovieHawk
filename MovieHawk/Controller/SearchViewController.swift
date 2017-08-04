@@ -21,6 +21,10 @@ class SearchViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = searchDataSource
         
+        let layout:UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+//        layout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0)
+        collectionView.collectionViewLayout = layout
+        
         loadData()
     }
     
@@ -44,19 +48,31 @@ class SearchViewController: UIViewController {
 
 extension SearchViewController:UICollectionViewDelegate{
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        let cells = 2
-        let width = (self.view.frame.width / CGFloat(cells))
-        let height = width
-        return CGSize(width: width, height: height)
-    }
-    
-    
-    
     func collectionView(_ collectionView: UICollectionView,
                         willDisplay cell: UICollectionViewCell,
                         forItemAt indexPath: IndexPath) {
         
+    }
+}
+
+extension SearchViewController: UICollectionViewDelegateFlowLayout{
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let cells = 2
+        print(self.view.frame.width)
+        let width = (self.view.frame.width / CGFloat(cells)) - 1
+        let height = width
+        return CGSize(width: width, height: height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout
+        collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 1.0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat{
+        return 1.0
     }
 }
 
