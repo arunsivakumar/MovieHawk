@@ -7,11 +7,12 @@ target 'MovieHawk' do
 
   # Pods for MovieHawk
 
-      pod 'Bond', '4.0.0'
+      pod 'Kingfisher'
       pod 'Parse'
       pod 'ParseFacebookUtilsV4'
       pod 'ParseUI' 
-
+      pod 'Alamofire'
+      pod 'SwiftyJSON'
   target 'MovieHawkTests' do
     inherit! :search_paths
     # Pods for testing

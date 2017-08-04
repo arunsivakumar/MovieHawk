@@ -1,15 +1,16 @@
 PODS:
+  - Alamofire (4.4.0)
   - Bolts (1.8.4):
     - Bolts/AppLinks (= 1.8.4)
     - Bolts/Tasks (= 1.8.4)
   - Bolts/AppLinks (1.8.4):
     - Bolts/Tasks
   - Bolts/Tasks (1.8.4)
-  - Bond (4.0.0)
   - FBSDKCoreKit (4.22.1):
     - Bolts (~> 1.7)
   - FBSDKLoginKit (4.22.1):
     - FBSDKCoreKit
+  - Kingfisher (3.9.1)
   - Parse (1.14.4):
     - Bolts/Tasks (~> 1.8)
   - ParseFacebookUtilsV4 (1.11.1):
@@ -21,22 +22,27 @@ PODS:
   - ParseUI (1.2.0):
     - Bolts/Tasks (~> 1.3)
     - Parse (~> 1.9)
+  - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
-  - Bond (= 4.0.0)
+  - Alamofire
+  - Kingfisher
   - Parse
   - ParseFacebookUtilsV4
   - ParseUI
+  - SwiftyJSON
 
 SPEC CHECKSUMS:
+  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
-  Bond: b729cdb22552def86efd4adfd8b8d93061eb4649
   FBSDKCoreKit: 9c2daf0162214d6d2e21cf8208a9c6c2a2e42b9c
   FBSDKLoginKit: 00cf28916b9f0169763a3d61985d745b579fe304
+  Kingfisher: 6729a0baaa458245bfb8cd5a1296c71c10d6eb6c
   Parse: b0aa91d2c435e53d4a9af26e741e014c9b35c42e
   ParseFacebookUtilsV4: 2f30c2b7021c8005d3042781da7ef87d06589421
   ParseUI: af2eba584799da4a9fbdac0e178662d7438b502e
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 8a69d0c35b0b88a43decf8f296e66dd242d43849
+PODFILE CHECKSUM: 51f094a33038771838aa479058ce90abcc31305d
 
 COCOAPODS: 1.2.0

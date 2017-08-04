@@ -10,8 +10,21 @@
 		4041F0B91F34E0D600FBE4EF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4041F0B41F34E0D600FBE4EF /* HomeViewController.swift */; };
 		4041F0BB1F34E26900FBE4EF /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4041F0BA1F34E26900FBE4EF /* SearchViewController.swift */; };
 		4041F0BD1F34E28200FBE4EF /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4041F0BC1F34E28200FBE4EF /* UserViewController.swift */; };
-		4041F0C01F34E2CD00FBE4EF /* SearchStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4041F0BF1F34E2CD00FBE4EF /* SearchStore.swift */; };
+		4041F0C01F34E2CD00FBE4EF /* MovieStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4041F0BF1F34E2CD00FBE4EF /* MovieStore.swift */; };
 		4041F0C21F34E33300FBE4EF /* SearchDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4041F0C11F34E33300FBE4EF /* SearchDataSource.swift */; };
+		4041F0C41F34E43700FBE4EF /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4041F0C31F34E43700FBE4EF /* Movie.swift */; };
+		4041F0C71F34F58600FBE4EF /* TmdbAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4041F0C61F34F58600FBE4EF /* TmdbAPI.swift */; };
+		4041F0C91F34F6CA00FBE4EF /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4041F0C81F34F6CA00FBE4EF /* NetworkHelper.swift */; };
+		4041F0CB1F34F71000FBE4EF /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4041F0CA1F34F71000FBE4EF /* Alamofire.framework */; };
+		4041F0CD1F34F71500FBE4EF /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4041F0CC1F34F71500FBE4EF /* Kingfisher.framework */; };
+		4041F0CF1F34F71800FBE4EF /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4041F0CE1F34F71800FBE4EF /* SwiftyJSON.framework */; };
+		4041F0D61F34F72000FBE4EF /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4041F0D01F34F72000FBE4EF /* Bolts.framework */; };
+		4041F0D71F34F72000FBE4EF /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4041F0D11F34F72000FBE4EF /* FBSDKCoreKit.framework */; };
+		4041F0D81F34F72000FBE4EF /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4041F0D21F34F72000FBE4EF /* FBSDKLoginKit.framework */; };
+		4041F0D91F34F72000FBE4EF /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4041F0D31F34F72000FBE4EF /* Parse.framework */; };
+		4041F0DA1F34F72000FBE4EF /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4041F0D41F34F72000FBE4EF /* ParseFacebookUtilsV4.framework */; };
+		4041F0DB1F34F72000FBE4EF /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4041F0D51F34F72000FBE4EF /* ParseUI.framework */; };
+		4041F0DD1F3514C400FBE4EF /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4041F0DC1F3514C400FBE4EF /* MovieCollectionViewCell.swift */; };
 		40C4CB841F34DE7300B172CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C4CB831F34DE7300B172CA /* AppDelegate.swift */; };
 		40C4CB891F34DE7300B172CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40C4CB871F34DE7300B172CA /* Main.storyboard */; };
 		40C4CB8B1F34DE7300B172CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40C4CB8A1F34DE7300B172CA /* Assets.xcassets */; };
@@ -47,8 +60,21 @@
 		4041F0B41F34E0D600FBE4EF /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		4041F0BA1F34E26900FBE4EF /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		4041F0BC1F34E28200FBE4EF /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
-		4041F0BF1F34E2CD00FBE4EF /* SearchStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchStore.swift; sourceTree = "<group>"; };
+		4041F0BF1F34E2CD00FBE4EF /* MovieStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieStore.swift; sourceTree = "<group>"; };
 		4041F0C11F34E33300FBE4EF /* SearchDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchDataSource.swift; sourceTree = "<group>"; };
+		4041F0C31F34E43700FBE4EF /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		4041F0C61F34F58600FBE4EF /* TmdbAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TmdbAPI.swift; sourceTree = "<group>"; };
+		4041F0C81F34F6CA00FBE4EF /* NetworkHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
+		4041F0CA1F34F71000FBE4EF /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../../Library/Developer/Xcode/DerivedData/MovieHawk-cvgitjmgthtewweeaibpdmurluyx/Build/Products/Debug-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
+		4041F0CC1F34F71500FBE4EF /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = "../../../../Library/Developer/Xcode/DerivedData/MovieHawk-cvgitjmgthtewweeaibpdmurluyx/Build/Products/Debug-iphoneos/Kingfisher/Kingfisher.framework"; sourceTree = "<group>"; };
+		4041F0CE1F34F71800FBE4EF /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../../../Library/Developer/Xcode/DerivedData/MovieHawk-cvgitjmgthtewweeaibpdmurluyx/Build/Products/Debug-iphoneos/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
+		4041F0D01F34F72000FBE4EF /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../../../../Library/Developer/Xcode/DerivedData/MovieHawk-cvgitjmgthtewweeaibpdmurluyx/Build/Products/Debug-iphoneos/Bolts/Bolts.framework"; sourceTree = "<group>"; };
+		4041F0D11F34F72000FBE4EF /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "../../../../Library/Developer/Xcode/DerivedData/MovieHawk-cvgitjmgthtewweeaibpdmurluyx/Build/Products/Debug-iphoneos/FBSDKCoreKit/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
+		4041F0D21F34F72000FBE4EF /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "../../../../Library/Developer/Xcode/DerivedData/MovieHawk-cvgitjmgthtewweeaibpdmurluyx/Build/Products/Debug-iphoneos/FBSDKLoginKit/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
+		4041F0D31F34F72000FBE4EF /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "../../../../Library/Developer/Xcode/DerivedData/MovieHawk-cvgitjmgthtewweeaibpdmurluyx/Build/Products/Debug-iphoneos/Parse/Parse.framework"; sourceTree = "<group>"; };
+		4041F0D41F34F72000FBE4EF /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtilsV4.framework; path = "../../../../Library/Developer/Xcode/DerivedData/MovieHawk-cvgitjmgthtewweeaibpdmurluyx/Build/Products/Debug-iphoneos/ParseFacebookUtilsV4/ParseFacebookUtilsV4.framework"; sourceTree = "<group>"; };
+		4041F0D51F34F72000FBE4EF /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseUI.framework; path = "../../../../Library/Developer/Xcode/DerivedData/MovieHawk-cvgitjmgthtewweeaibpdmurluyx/Build/Products/Debug-iphoneos/ParseUI/ParseUI.framework"; sourceTree = "<group>"; };
+		4041F0DC1F3514C400FBE4EF /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
 		40C4CB801F34DE7300B172CA /* MovieHawk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieHawk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40C4CB831F34DE7300B172CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40C4CB881F34DE7300B172CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -74,6 +100,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4041F0D61F34F72000FBE4EF /* Bolts.framework in Frameworks */,
+				4041F0D71F34F72000FBE4EF /* FBSDKCoreKit.framework in Frameworks */,
+				4041F0D81F34F72000FBE4EF /* FBSDKLoginKit.framework in Frameworks */,
+				4041F0D91F34F72000FBE4EF /* Parse.framework in Frameworks */,
+				4041F0DA1F34F72000FBE4EF /* ParseFacebookUtilsV4.framework in Frameworks */,
+				4041F0DB1F34F72000FBE4EF /* ParseUI.framework in Frameworks */,
+				4041F0CF1F34F71800FBE4EF /* SwiftyJSON.framework in Frameworks */,
+				4041F0CD1F34F71500FBE4EF /* Kingfisher.framework in Frameworks */,
+				4041F0CB1F34F71000FBE4EF /* Alamofire.framework in Frameworks */,
 				46A9D4588699A381D3EAA96E /* Pods_MovieHawk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -129,6 +164,7 @@
 		4041F0B61F34E0D600FBE4EF /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				4041F0C81F34F6CA00FBE4EF /* NetworkHelper.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -136,6 +172,7 @@
 		4041F0B71F34E0D600FBE4EF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4041F0C31F34E43700FBE4EF /* Movie.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -143,6 +180,7 @@
 		4041F0B81F34E0D600FBE4EF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4041F0DC1F3514C400FBE4EF /* MovieCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -150,9 +188,17 @@
 		4041F0BE1F34E2C100FBE4EF /* Store */ = {
 			isa = PBXGroup;
 			children = (
-				4041F0BF1F34E2CD00FBE4EF /* SearchStore.swift */,
+				4041F0BF1F34E2CD00FBE4EF /* MovieStore.swift */,
 			);
 			path = Store;
+			sourceTree = "<group>";
+		};
+		4041F0C51F34F56200FBE4EF /* API */ = {
+			isa = PBXGroup;
+			children = (
+				4041F0C61F34F58600FBE4EF /* TmdbAPI.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		40C4CB771F34DE7300B172CA = {
@@ -180,6 +226,7 @@
 		40C4CB821F34DE7300B172CA /* MovieHawk */ = {
 			isa = PBXGroup;
 			children = (
+				4041F0C51F34F56200FBE4EF /* API */,
 				4041F0BE1F34E2C100FBE4EF /* Store */,
 				4041F0B31F34E0D600FBE4EF /* Controller */,
 				4041F0B51F34E0D600FBE4EF /* DataSource */,
@@ -213,6 +260,15 @@
 		5C115EA1317B59BDE41EAF5D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4041F0D01F34F72000FBE4EF /* Bolts.framework */,
+				4041F0D11F34F72000FBE4EF /* FBSDKCoreKit.framework */,
+				4041F0D21F34F72000FBE4EF /* FBSDKLoginKit.framework */,
+				4041F0D31F34F72000FBE4EF /* Parse.framework */,
+				4041F0D41F34F72000FBE4EF /* ParseFacebookUtilsV4.framework */,
+				4041F0D51F34F72000FBE4EF /* ParseUI.framework */,
+				4041F0CE1F34F71800FBE4EF /* SwiftyJSON.framework */,
+				4041F0CC1F34F71500FBE4EF /* Kingfisher.framework */,
+				4041F0CA1F34F71000FBE4EF /* Alamofire.framework */,
 				3B9862C71BE14EAE30693DAF /* Pods_MovieHawk.framework */,
 				270E77F1C145C26E51EF4FFC /* Pods_MovieHawkTests.framework */,
 				7C04747E95E0484E9652D611 /* Pods_MovieHawkUITests.framework */,
@@ -517,12 +573,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4041F0C41F34E43700FBE4EF /* Movie.swift in Sources */,
+				4041F0C91F34F6CA00FBE4EF /* NetworkHelper.swift in Sources */,
+				4041F0C71F34F58600FBE4EF /* TmdbAPI.swift in Sources */,
 				4041F0C21F34E33300FBE4EF /* SearchDataSource.swift in Sources */,
 				4041F0BB1F34E26900FBE4EF /* SearchViewController.swift in Sources */,
 				4041F0BD1F34E28200FBE4EF /* UserViewController.swift in Sources */,
 				4041F0B91F34E0D600FBE4EF /* HomeViewController.swift in Sources */,
+				4041F0DD1F3514C400FBE4EF /* MovieCollectionViewCell.swift in Sources */,
 				40C4CB841F34DE7300B172CA /* AppDelegate.swift in Sources */,
-				4041F0C01F34E2CD00FBE4EF /* SearchStore.swift in Sources */,
+				4041F0C01F34E2CD00FBE4EF /* MovieStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
