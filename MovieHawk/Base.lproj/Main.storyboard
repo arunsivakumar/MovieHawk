@@ -70,6 +70,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="movieImageView" destination="6X4-1k-U7b" id="MGN-XM-uhE"/>
+                                            <segue destination="kLR-VV-l57" kind="show" identifier="showMovie" id="DKX-h5-tED"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -86,17 +87,16 @@
                     <navigationItem key="navigationItem" id="1VD-cN-tF7"/>
                     <connections>
                         <outlet property="collectionView" destination="32h-b1-Yfq" id="Qr8-Vd-UxM"/>
-                        <segue destination="kLR-VV-l57" kind="show" id="H1J-Cl-j0q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l1x-2t-gD5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="157.59999999999999" y="1064.6176911544228"/>
         </scene>
-        <!--View Controller-->
+        <!--Movie Detail View Controller-->
         <scene sceneID="81w-XD-7ME">
             <objects>
-                <viewController id="kLR-VV-l57" sceneMemberID="viewController">
+                <viewController id="kLR-VV-l57" customClass="MovieDetailViewController" customModule="MovieHawk" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1z9-37-hsH"/>
                         <viewControllerLayoutGuide type="bottom" id="JPi-4P-MeZ"/>
@@ -104,12 +104,48 @@
                     <view key="view" contentMode="scaleToFill" id="NQB-UC-lmZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f2F-FI-GiV">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                            </imageView>
+                            <visualEffectView opaque="NO" alpha="0.65000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zQ6-BM-PYk">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="9Ka-64-qhR">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <color key="backgroundColor" red="0.4039215686" green="0.39607843139999999" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jLP-ln-fVa">
+                                <rect key="frame" x="20" y="96" width="335" height="474"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zQ6-BM-PYk" firstAttribute="height" secondItem="f2F-FI-GiV" secondAttribute="height" id="HGI-By-RGp"/>
+                            <constraint firstItem="zQ6-BM-PYk" firstAttribute="centerY" secondItem="f2F-FI-GiV" secondAttribute="centerY" id="NGa-mf-Xcp"/>
+                            <constraint firstItem="f2F-FI-GiV" firstAttribute="leading" secondItem="NQB-UC-lmZ" secondAttribute="leading" id="Ub8-Sx-hC3"/>
+                            <constraint firstItem="f2F-FI-GiV" firstAttribute="top" secondItem="1z9-37-hsH" secondAttribute="bottom" id="fKj-Pr-CbX"/>
+                            <constraint firstItem="f2F-FI-GiV" firstAttribute="bottom" secondItem="JPi-4P-MeZ" secondAttribute="top" id="gTj-Lz-sXC"/>
+                            <constraint firstAttribute="trailing" secondItem="f2F-FI-GiV" secondAttribute="trailing" id="hCf-MW-hzr"/>
+                            <constraint firstItem="zQ6-BM-PYk" firstAttribute="centerX" secondItem="f2F-FI-GiV" secondAttribute="centerX" id="vqM-B2-hWt"/>
+                            <constraint firstItem="zQ6-BM-PYk" firstAttribute="width" secondItem="f2F-FI-GiV" secondAttribute="width" id="zlh-43-fy9"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="movieImageView" destination="f2F-FI-GiV" id="jOC-rJ-teg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3At-vM-vu9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-282" y="1907"/>
+            <point key="canvasLocation" x="-282.39999999999998" y="1906.5967016491757"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="hoY-vE-mQE">
@@ -211,6 +247,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="H1J-Cl-j0q"/>
+        <segue reference="DKX-h5-tED"/>
     </inferredMetricsTieBreakers>
 </document>

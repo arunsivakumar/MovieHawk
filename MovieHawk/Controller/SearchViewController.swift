@@ -68,7 +68,14 @@ extension SearchViewController{
         case "showMovie"?:
             if let selectedIndexPath =
                 collectionView.indexPathsForSelectedItems?.first {
+                
+                let movie = searchDataSource.movies[selectedIndexPath.row]
+                
+                let vc =
+                    segue.destination as! MovieDetailViewController
+                vc.movie = movie
             }
+
         default:
             preconditionFailure("Unexpected segue identifier.")
         }
