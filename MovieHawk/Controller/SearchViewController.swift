@@ -10,7 +10,7 @@ import UIKit
 
 class SearchViewController: UIViewController {
     
-    var searchStore:SearchStore!
+    var store:MovieStore!
     let searchDataSource = SearchDataSource()
     
     
@@ -26,7 +26,15 @@ class SearchViewController: UIViewController {
     
     
     func loadData(){
-
+        store.fetchMovies { (movieResult) in
+            switch movieResult{
+            case let .success(movies):
+                self.searchDataSource.movies = movies
+            case .failure(_):
+                self.searchDataSource.movies.removeAll()
+            }
+            self.collectionView.reloadSections(IndexSet(integer:0))
+        }
         
     }
     
@@ -42,6 +50,8 @@ extension SearchViewController:UICollectionViewDelegate{
         let height = width
         return CGSize(width: width, height: height)
     }
+    
+    
     
     func collectionView(_ collectionView: UICollectionView,
                         willDisplay cell: UICollectionViewCell,

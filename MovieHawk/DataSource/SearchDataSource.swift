@@ -7,3 +7,26 @@
 //
 
 import Foundation
+import UIKit
+
+class SearchDataSource:NSObject,UICollectionViewDataSource{
+    var movies = [Movie]()
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return movies.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        
+        let identifier = "MovieCollectionViewCell"
+        
+        let cell =
+            collectionView.dequeueReusableCell(withReuseIdentifier: identifier,
+                                               for: indexPath) as! MovieCollectionViewCell
+        cell.movie = movies[indexPath.row]
+        return cell
+        
+    }
+}
+

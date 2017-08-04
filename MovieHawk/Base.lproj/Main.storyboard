@@ -28,10 +28,10 @@
             </objects>
             <point key="canvasLocation" x="969" y="1078"/>
         </scene>
-        <!--View Controller-->
+        <!--Search View Controller-->
         <scene sceneID="VXI-RF-GtV">
             <objects>
-                <viewController id="chb-sZ-DL6" sceneMemberID="viewController">
+                <viewController id="chb-sZ-DL6" customClass="SearchViewController" customModule="MovieHawk" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uvF-M0-EPt"/>
                         <viewControllerLayoutGuide type="bottom" id="mWE-zJ-O3B"/>
@@ -39,16 +39,59 @@
                     <view key="view" contentMode="scaleToFill" id="e7a-NF-yxH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="32h-b1-Yfq">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="kmW-2P-F56">
+                                    <size key="itemSize" width="178" height="165"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MovieCollectionViewCell" id="M6R-df-jLP" customClass="MovieCollectionViewCell" customModule="MovieHawk" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="178" height="165"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="178" height="165"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6X4-1k-U7b">
+                                                    <rect key="frame" x="0.0" y="0.0" width="178" height="165"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="6X4-1k-U7b" secondAttribute="bottom" id="H5s-7l-HaD"/>
+                                            <constraint firstItem="6X4-1k-U7b" firstAttribute="leading" secondItem="M6R-df-jLP" secondAttribute="leading" id="Zpa-zY-5yx"/>
+                                            <constraint firstAttribute="trailing" secondItem="6X4-1k-U7b" secondAttribute="trailing" id="j3D-lU-xDb"/>
+                                            <constraint firstItem="6X4-1k-U7b" firstAttribute="top" secondItem="M6R-df-jLP" secondAttribute="top" id="wHO-Vw-keO"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="movieImageView" destination="6X4-1k-U7b" id="MGN-XM-uhE"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="32h-b1-Yfq" firstAttribute="leading" secondItem="e7a-NF-yxH" secondAttribute="leading" id="378-85-Hrw"/>
+                            <constraint firstAttribute="trailing" secondItem="32h-b1-Yfq" secondAttribute="trailing" id="hcA-Hv-JNW"/>
+                            <constraint firstAttribute="bottom" secondItem="32h-b1-Yfq" secondAttribute="bottom" id="pdZ-AX-U47"/>
+                            <constraint firstItem="32h-b1-Yfq" firstAttribute="top" secondItem="e7a-NF-yxH" secondAttribute="top" id="vq5-kZ-ukG"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="1VD-cN-tF7"/>
                     <connections>
+                        <outlet property="collectionView" destination="32h-b1-Yfq" id="Qr8-Vd-UxM"/>
                         <segue destination="kLR-VV-l57" kind="show" id="H1J-Cl-j0q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l1x-2t-gD5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="158" y="1065"/>
+            <point key="canvasLocation" x="157.59999999999999" y="1064.6176911544228"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="81w-XD-7ME">
@@ -78,8 +121,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="rgh-L9-IiE" kind="relationship" relationship="viewControllers" id="XdE-CW-6rd"/>
                         <segue destination="2Zb-60-UAo" kind="relationship" relationship="viewControllers" id="skp-Wx-tik"/>
+                        <segue destination="rgh-L9-IiE" kind="relationship" relationship="viewControllers" id="XdE-CW-6rd"/>
                         <segue destination="C3s-cm-wFy" kind="relationship" relationship="viewControllers" id="ibi-1Q-XiL"/>
                     </connections>
                 </tabBarController>
@@ -107,7 +150,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-866" y="1077"/>
+            <point key="canvasLocation" x="-866.39999999999998" y="1076.311844077961"/>
         </scene>
         <!--Feed-->
         <scene sceneID="8JU-kg-EJf">
