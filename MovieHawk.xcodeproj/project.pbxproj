@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4041F0B91F34E0D600FBE4EF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4041F0B41F34E0D600FBE4EF /* ViewController.swift */; };
 		40C4CB841F34DE7300B172CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C4CB831F34DE7300B172CA /* AppDelegate.swift */; };
-		40C4CB861F34DE7300B172CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C4CB851F34DE7300B172CA /* ViewController.swift */; };
 		40C4CB891F34DE7300B172CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40C4CB871F34DE7300B172CA /* Main.storyboard */; };
 		40C4CB8B1F34DE7300B172CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40C4CB8A1F34DE7300B172CA /* Assets.xcassets */; };
 		40C4CB8E1F34DE7300B172CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40C4CB8C1F34DE7300B172CA /* LaunchScreen.storyboard */; };
@@ -40,9 +40,9 @@
 		270E77F1C145C26E51EF4FFC /* Pods_MovieHawkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieHawkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B9862C71BE14EAE30693DAF /* Pods_MovieHawk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieHawk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EA3F20A85F3DA5376FB2058 /* Pods-MovieHawkUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieHawkUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MovieHawkUITests/Pods-MovieHawkUITests.release.xcconfig"; sourceTree = "<group>"; };
+		4041F0B41F34E0D600FBE4EF /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		40C4CB801F34DE7300B172CA /* MovieHawk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieHawk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40C4CB831F34DE7300B172CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		40C4CB851F34DE7300B172CA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		40C4CB881F34DE7300B172CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		40C4CB8A1F34DE7300B172CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		40C4CB8D1F34DE7300B172CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -89,6 +89,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4041F0B21F34E0C300FBE4EF /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				40C4CB831F34DE7300B172CA /* AppDelegate.swift */,
+				40C4CB8A1F34DE7300B172CA /* Assets.xcassets */,
+				40C4CB8C1F34DE7300B172CA /* LaunchScreen.storyboard */,
+				40C4CB8F1F34DE7300B172CA /* Info.plist */,
+			);
+			name = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		4041F0B31F34E0D600FBE4EF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4041F0B41F34E0D600FBE4EF /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4041F0B51F34E0D600FBE4EF /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		4041F0B61F34E0D600FBE4EF /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		4041F0B71F34E0D600FBE4EF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4041F0B81F34E0D600FBE4EF /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		40C4CB771F34DE7300B172CA = {
 			isa = PBXGroup;
 			children = (
@@ -114,12 +161,13 @@
 		40C4CB821F34DE7300B172CA /* MovieHawk */ = {
 			isa = PBXGroup;
 			children = (
-				40C4CB831F34DE7300B172CA /* AppDelegate.swift */,
-				40C4CB851F34DE7300B172CA /* ViewController.swift */,
+				4041F0B31F34E0D600FBE4EF /* Controller */,
+				4041F0B51F34E0D600FBE4EF /* DataSource */,
+				4041F0B61F34E0D600FBE4EF /* Helper */,
+				4041F0B71F34E0D600FBE4EF /* Model */,
+				4041F0B81F34E0D600FBE4EF /* View */,
+				4041F0B21F34E0C300FBE4EF /* SupportingFiles */,
 				40C4CB871F34DE7300B172CA /* Main.storyboard */,
-				40C4CB8A1F34DE7300B172CA /* Assets.xcassets */,
-				40C4CB8C1F34DE7300B172CA /* LaunchScreen.storyboard */,
-				40C4CB8F1F34DE7300B172CA /* Info.plist */,
 			);
 			path = MovieHawk;
 			sourceTree = "<group>";
@@ -449,7 +497,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40C4CB861F34DE7300B172CA /* ViewController.swift in Sources */,
+				4041F0B91F34E0D600FBE4EF /* ViewController.swift in Sources */,
 				40C4CB841F34DE7300B172CA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -707,6 +755,7 @@
 				40C4CBAA1F34DE7300B172CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		40C4CBAB1F34DE7300B172CA /* Build configuration list for PBXNativeTarget "MovieHawkTests" */ = {
 			isa = XCConfigurationList;
@@ -715,6 +764,7 @@
 				40C4CBAD1F34DE7300B172CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		40C4CBAE1F34DE7300B172CA /* Build configuration list for PBXNativeTarget "MovieHawkUITests" */ = {
 			isa = XCConfigurationList;
@@ -723,6 +773,7 @@
 				40C4CBB01F34DE7300B172CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
