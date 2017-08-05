@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,6 +21,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navVC = tabBarVC.viewControllers?[0] as! UINavigationController
         let vc = navVC.topViewController as! SearchViewController
         vc.store = MovieStore()
+        
+        
+        let configuration = ParseClientConfiguration {
+            $0.applicationId = "MovieHawk"
+            $0.server = "https://moviehawk-parse-ask.herokuapp.com/parse"
+        }
+        Parse.initialize(with: configuration)
+        
+        do {
+            try PFUser.logIn(withUsername: "test", password: "test")
+        } catch {
+            print("Unable to log in")
+        }
+        
+        if let currentUser = PFUser.current() {
+            print("\(currentUser.username!) logged in successfully")
+        } else {
+            print("No logged in user :(")
+        }
         
         
         return true
