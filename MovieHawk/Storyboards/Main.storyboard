@@ -24,6 +24,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="ym5-4p-NAi"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="95k-NH-Bff" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -86,6 +87,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="1VD-cN-tF7"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="collectionView" destination="32h-b1-Yfq" id="Qr8-Vd-UxM"/>
                     </connections>
@@ -324,6 +326,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="FEED" id="Xqb-li-WcB"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="tableView" destination="MP0-dv-rzz" id="I4F-pg-sM1"/>
                     </connections>
@@ -340,6 +343,7 @@
                         <inset key="imageInsets" minX="0.0" minY="10" maxX="0.0" maxY="-10"/>
                     </tabBarItem>
                     <toolbarItems/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="TAT-0U-gKL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -361,6 +365,7 @@
                         <inset key="imageInsets" minX="0.0" minY="10" maxX="0.0" maxY="-10"/>
                     </tabBarItem>
                     <toolbarItems/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="CFW-oV-sdI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -382,6 +387,7 @@
                         <inset key="imageInsets" minX="0.0" minY="10" maxX="0.0" maxY="-10"/>
                     </tabBarItem>
                     <toolbarItems/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="2IC-6t-v7Y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
