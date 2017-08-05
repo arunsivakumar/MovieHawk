@@ -89,6 +89,7 @@ class TmdbAPI{
         guard
             let id = json["id"].int,
             let title = json["title"].string,
+            let overview = json["overview"].string,
             let urlString = json["poster_path"].string,
             let posterURL = URL(string: secureBaseImageURLString + posterSizes[3] + urlString)
         else{
@@ -100,7 +101,7 @@ class TmdbAPI{
         }
         
         print(posterURL.absoluteString)
-        return Movie(id: id, title: title, posterURL: posterURL)
+        return Movie(id: id, title: title, posterURL: posterURL, overview: overview)
     }
 
 }

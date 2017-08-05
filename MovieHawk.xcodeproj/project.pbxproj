@@ -26,8 +26,8 @@
 		4041F0DB1F34F72000FBE4EF /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4041F0D51F34F72000FBE4EF /* ParseUI.framework */; };
 		4041F0DD1F3514C400FBE4EF /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4041F0DC1F3514C400FBE4EF /* MovieCollectionViewCell.swift */; };
 		4041F0DF1F35241700FBE4EF /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4041F0DE1F35241700FBE4EF /* MovieDetailViewController.swift */; };
+		4041F0E21F354F2700FBE4EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4041F0E11F354F2700FBE4EF /* Main.storyboard */; };
 		40C4CB841F34DE7300B172CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C4CB831F34DE7300B172CA /* AppDelegate.swift */; };
-		40C4CB891F34DE7300B172CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40C4CB871F34DE7300B172CA /* Main.storyboard */; };
 		40C4CB8B1F34DE7300B172CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40C4CB8A1F34DE7300B172CA /* Assets.xcassets */; };
 		40C4CB8E1F34DE7300B172CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40C4CB8C1F34DE7300B172CA /* LaunchScreen.storyboard */; };
 		40C4CB991F34DE7300B172CA /* MovieHawkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C4CB981F34DE7300B172CA /* MovieHawkTests.swift */; };
@@ -77,9 +77,9 @@
 		4041F0D51F34F72000FBE4EF /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseUI.framework; path = "../../../../Library/Developer/Xcode/DerivedData/MovieHawk-cvgitjmgthtewweeaibpdmurluyx/Build/Products/Debug-iphoneos/ParseUI/ParseUI.framework"; sourceTree = "<group>"; };
 		4041F0DC1F3514C400FBE4EF /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
 		4041F0DE1F35241700FBE4EF /* MovieDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
+		4041F0E11F354F2700FBE4EF /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		40C4CB801F34DE7300B172CA /* MovieHawk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieHawk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40C4CB831F34DE7300B172CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		40C4CB881F34DE7300B172CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		40C4CB8A1F34DE7300B172CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		40C4CB8D1F34DE7300B172CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		40C4CB8F1F34DE7300B172CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -204,6 +204,14 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		4041F0E01F354F2700FBE4EF /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				4041F0E11F354F2700FBE4EF /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		40C4CB771F34DE7300B172CA = {
 			isa = PBXGroup;
 			children = (
@@ -229,6 +237,7 @@
 		40C4CB821F34DE7300B172CA /* MovieHawk */ = {
 			isa = PBXGroup;
 			children = (
+				4041F0E01F354F2700FBE4EF /* Storyboards */,
 				4041F0C51F34F56200FBE4EF /* API */,
 				4041F0BE1F34E2C100FBE4EF /* Store */,
 				4041F0B31F34E0D600FBE4EF /* Controller */,
@@ -237,7 +246,6 @@
 				4041F0B71F34E0D600FBE4EF /* Model */,
 				4041F0B81F34E0D600FBE4EF /* View */,
 				4041F0B21F34E0C300FBE4EF /* SupportingFiles */,
-				40C4CB871F34DE7300B172CA /* Main.storyboard */,
 			);
 			path = MovieHawk;
 			sourceTree = "<group>";
@@ -411,9 +419,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4041F0E21F354F2700FBE4EF /* Main.storyboard in Resources */,
 				40C4CB8E1F34DE7300B172CA /* LaunchScreen.storyboard in Resources */,
 				40C4CB8B1F34DE7300B172CA /* Assets.xcassets in Resources */,
-				40C4CB891F34DE7300B172CA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -622,14 +630,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		40C4CB871F34DE7300B172CA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				40C4CB881F34DE7300B172CA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		40C4CB8C1F34DE7300B172CA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
