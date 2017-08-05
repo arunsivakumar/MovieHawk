@@ -22,10 +22,24 @@ class NavigationController: UINavigationController {
     }
     
     func configureUI(){
-        self.navigationBar.barTintColor = Constants.navBarColor
-    }
-    
+        
+        self.navigationBar.tintColor = .white
+        self.navigationBar.titleTextAttributes = [
+            NSFontAttributeName: UIFont(name: Constants.defaultFontNavigation, size: Constants.defaultFontSizeNavigation)!,
+            NSForegroundColorAttributeName : UIColor.white
+        ]
+        
+        let visualEffectView   = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
+        visualEffectView.frame =  (self.navigationBar.bounds.insetBy(dx: 0, dy: -10).offsetBy(dx: 0, dy: -10))
+        self.navigationBar.isTranslucent = true
+        self.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationBar.addSubview(visualEffectView)
+        
+        self.navigationBar.sendSubview(toBack: visualEffectView)
+        
+//        self.navigationBar.barTintColor = Constants.navBarColor
 
+    }
     /*
     // MARK: - Navigation
 

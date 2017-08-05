@@ -12,4 +12,6 @@ import UIKit
 struct Constants{
     
     static let navBarColor = UIColor.darkGray
+    static let defaultFontNavigation = "HelveticaNeue-thin"
+    static let defaultFontSizeNavigation:CGFloat = 18
 }
