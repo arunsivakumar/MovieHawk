@@ -7,19 +7,37 @@
 //
 
 import Foundation
+import Parse
 
-class Movie{
+class Movie: PFObject, PFSubclassing {
     
-    var id: Int
-    var title: String
-    var posterURL: URL
-    var overview: String
+    @NSManaged var id: Int
+    @NSManaged var title: String
+    @NSManaged var posterURL: String
+    @NSManaged var overview: String
+    
+    @NSManaged var user: PFUser?
+    
+    
     init(id: Int, title: String, posterURL: URL,overview: String){
-        
+        super.init()
+    
         self.id = id
         self.title = title
-        self.posterURL = posterURL
+        self.posterURL = posterURL.absoluteString
         self.overview = overview
+        
+    }
+    
+    // PF subclassing
+    static func parseClassName() -> String {
+        return "Movie"
+    }
+    
+    func watchMovie(){
+        
+        user = PFUser.current()
+        saveInBackground()
     }
     
 }
