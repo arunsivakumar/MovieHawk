@@ -19,22 +19,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
 
         let tabBarC = window!.rootViewController as! UITabBarController
-        tabBarC.tabBar.unselectedItemTintColor = UIColor.lightGray
-        tabBarC.tabBar.tintColor = UIColor.white
-        tabBarC.tabBar.barTintColor = UIColor.black
+       
         let navVC0 = tabBarC.viewControllers?[0] as! UINavigationController
-        navVC0.navigationBar.barTintColor = UIColor(red: 255/255, green: 255/255, blue: 122/255, alpha: 1.0)
+       
         let vc0 = navVC0.topViewController as! FeedViewController
         vc0.store = FeedStore()
         
         
         let navVC1 = tabBarC.viewControllers?[1] as! UINavigationController
-        navVC1.navigationBar.barTintColor = UIColor.darkGray
         let vc1 = navVC1.topViewController as! SearchViewController
         vc1.store = MovieStore()
         
         let navVC2 = tabBarC.viewControllers?[2] as! UINavigationController
-        navVC2.navigationBar.barTintColor = UIColor.darkGray
         let vc2 = navVC2.topViewController as! UserViewController
         
         let configuration = ParseClientConfiguration {

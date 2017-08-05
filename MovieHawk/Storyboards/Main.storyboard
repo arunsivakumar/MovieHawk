@@ -212,7 +212,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="hoY-vE-mQE">
             <objects>
-                <tabBarController id="XWj-Xg-HdA" sceneMemberID="viewController">
+                <tabBarController id="XWj-Xg-HdA" customClass="TabBarController" customModule="MovieHawk" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Zct-hs-6kA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -325,7 +325,7 @@
         <!--Navigation Controller-->
         <scene sceneID="8JU-kg-EJf">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rgh-L9-IiE" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rgh-L9-IiE" customClass="NavigationController" customModule="MovieHawk" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="Live" id="A1q-DK-CLo">
                         <inset key="imageInsets" minX="0.0" minY="10" maxX="0.0" maxY="-10"/>
                     </tabBarItem>
@@ -346,7 +346,7 @@
         <!--Navigation Controller-->
         <scene sceneID="01L-9m-1rH">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2Zb-60-UAo" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2Zb-60-UAo" customClass="NavigationController" customModule="MovieHawk" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="Explore" id="4OQ-0J-2sZ">
                         <inset key="imageInsets" minX="0.0" minY="10" maxX="0.0" maxY="-10"/>
                     </tabBarItem>
@@ -367,7 +367,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Gmx-fQ-dBr">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="C3s-cm-wFy" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="C3s-cm-wFy" customClass="NavigationController" customModule="MovieHawk" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="User" id="60P-OM-qcc">
                         <inset key="imageInsets" minX="0.0" minY="10" maxX="0.0" maxY="-10"/>
                     </tabBarItem>
