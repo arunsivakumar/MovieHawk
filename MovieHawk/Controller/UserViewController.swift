@@ -11,13 +11,7 @@ import UIKit
 
 
 class UserViewController: UIViewController {
-    
-    
-//    fileprivate enum SearchState{
-//        case none
-//        case search
-//    }
-    
+        
     var store:UserStore!
     
     @IBOutlet weak var searchBar: UISearchBar!{
@@ -25,17 +19,6 @@ class UserViewController: UIViewController {
             searchBar.delegate = self
         }
     }
-//    fileprivate var searchState: SearchState = .none{
-//        
-//        didSet{
-//            switch searchState {
-//            case .none:
-//                fetchUsers(searchTerm: "")
-//            case .search:
-//                fetchUsers(searchTerm: "")
-//            }
-//        }
-//    }
     
     var searchTerm = ""{
         didSet{
