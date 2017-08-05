@@ -13,12 +13,13 @@ class Movie{
     var id: Int
     var title: String
     var posterURL: URL
-    
-    init(id: Int, title: String, posterURL: URL){
+    var overview: String
+    init(id: Int, title: String, posterURL: URL,overview: String){
         
         self.id = id
         self.title = title
         self.posterURL = posterURL
+        self.overview = overview
     }
     
 }

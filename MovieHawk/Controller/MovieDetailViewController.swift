@@ -18,6 +18,7 @@ class MovieDetailViewController: UIViewController {
     @IBOutlet weak var watchNowButton: UIButton!
     @IBOutlet weak var movieImageView: UIImageView!
     
+    @IBOutlet weak var titleLabel: UILabel!
     
     
     override func viewDidLoad() {
@@ -26,7 +27,8 @@ class MovieDetailViewController: UIViewController {
     }
     
     func loadData(){
-
+         titleLabel.text = movie.title
+        descriptionTextField.text = movie.overview
         movieImageView.kf.setImage(with: movie.posterURL)
     }
     @IBAction func close(_ sender: UIButton) {
