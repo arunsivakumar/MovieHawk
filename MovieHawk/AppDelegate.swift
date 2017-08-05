@@ -13,49 +13,14 @@ import Parse
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-
-        let tabBarC = window!.rootViewController as! UITabBarController
-       
-        let navVC0 = tabBarC.viewControllers?[0] as! UINavigationController
-       
-        let vc0 = navVC0.topViewController as! FeedViewController
-        vc0.store = FeedStore()
         
-        
-        let navVC1 = tabBarC.viewControllers?[1] as! UINavigationController
-        let vc1 = navVC1.topViewController as! SearchViewController
-        vc1.store = MovieStore()
-        
-        let navVC2 = tabBarC.viewControllers?[2] as! UINavigationController
-        let vc2 = navVC2.topViewController as! UserViewController
-        
-        let configuration = ParseClientConfiguration {
-            $0.applicationId = "MovieHawk"
-            $0.server = "https://moviehawk-parse-ask.herokuapp.com/parse"
-        }
-        Parse.initialize(with: configuration)
-        
-        let acl = PFACL()
-        acl.getPublicReadAccess = true
-        PFACL.setDefault(acl, withAccessForCurrentUser: true)
-        
-        do {
-            try PFUser.logIn(withUsername: "test", password: "test")
-        } catch {
-            print("Unable to log in")
-        }
-        
-        if let currentUser = PFUser.current() {
-            print("\(currentUser.username!) logged in successfully")
-        } else {
-            print("No logged in user :(")
-        }
-        Movie.registerSubclass()
-        
+        configureUI()
+        loadData()
+        configureParse()
+    
         return true
     }
 
@@ -82,5 +47,58 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+}
+
+extension AppDelegate{
+    
+    fileprivate func configureUI(){
+        UIApplication.shared.statusBarStyle = .lightContent
+    }
+    
+    fileprivate func loadData(){
+        let tabBarC = window!.rootViewController as! UITabBarController
+        
+        let navVC0 = tabBarC.viewControllers?[0] as! UINavigationController
+        
+        let vc0 = navVC0.topViewController as! FeedViewController
+        vc0.store = FeedStore()
+        
+        
+        let navVC1 = tabBarC.viewControllers?[1] as! UINavigationController
+        let vc1 = navVC1.topViewController as! SearchViewController
+        vc1.store = MovieStore()
+        
+        let navVC2 = tabBarC.viewControllers?[2] as! UINavigationController
+        let vc2 = navVC2.topViewController as! UserViewController
+        
+    }
+    
+    fileprivate func configureParse(){
+        
+        
+        let configuration = ParseClientConfiguration {
+            $0.applicationId = "MovieHawk"
+            $0.server = "https://moviehawk-parse-ask.herokuapp.com/parse"
+        }
+        Parse.initialize(with: configuration)
+        
+        let acl = PFACL()
+        acl.getPublicReadAccess = true
+        PFACL.setDefault(acl, withAccessForCurrentUser: true)
+        
+        do {
+            try PFUser.logIn(withUsername: "test", password: "test")
+        } catch {
+            print("Unable to log in")
+        }
+        
+        if let currentUser = PFUser.current() {
+            print("\(currentUser.username!) logged in successfully")
+        } else {
+            print("No logged in user :(")
+        }
+        Movie.registerSubclass()
+        
+    }
 }
 
