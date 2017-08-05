@@ -130,7 +130,7 @@
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g1r-ZW-ccg">
                                 <rect key="frame" x="0.0" y="615" width="375" height="52"/>
-                                <color key="backgroundColor" red="0.93430758250000001" green="0.81903808649999998" blue="0.4484885019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.90444559010152281" green="0.73228453340653943" blue="0.30760186675924128" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="sZM-uC-TDc"/>
                                 </constraints>
