@@ -21,14 +21,70 @@
                     <view key="view" contentMode="scaleToFill" id="BcW-sJ-6G6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YWH-2B-sM9">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UserTableViewCell" rowHeight="60" id="56V-1L-dw2" customClass="UserTableViewCell" customModule="MovieHawk" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="56V-1L-dw2" id="odv-8z-ewQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Jsx-nn-eqR">
+                                                    <rect key="frame" x="16" y="16" width="343" height="27.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cDy-Ic-Sdw">
+                                                            <rect key="frame" x="0.0" y="0.0" width="288" height="27.5"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XuL-j1-IM3">
+                                                            <rect key="frame" x="293" y="0.0" width="50" height="27.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="50" id="17C-mn-7ml"/>
+                                                            </constraints>
+                                                            <state key="normal" image="User"/>
+                                                            <state key="selected" image="Following"/>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Jsx-nn-eqR" secondAttribute="bottom" constant="8" id="6GW-M7-oiW"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Jsx-nn-eqR" secondAttribute="trailing" constant="8" id="fmE-ff-tNi"/>
+                                                <constraint firstItem="Jsx-nn-eqR" firstAttribute="leading" secondItem="odv-8z-ewQ" secondAttribute="leadingMargin" constant="8" id="hNm-nA-tal"/>
+                                                <constraint firstItem="Jsx-nn-eqR" firstAttribute="top" secondItem="odv-8z-ewQ" secondAttribute="topMargin" constant="8" id="lbi-5W-pBP"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="userFollowButton" destination="XuL-j1-IM3" id="3wE-2e-ADZ"/>
+                                            <outlet property="usernameLabel" destination="cDy-Ic-Sdw" id="X3U-o6-eUw"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="YWH-2B-sM9" secondAttribute="trailing" id="8qu-vB-9hz"/>
+                            <constraint firstItem="YWH-2B-sM9" firstAttribute="leading" secondItem="BcW-sJ-6G6" secondAttribute="leading" id="AZZ-Ca-2F6"/>
+                            <constraint firstItem="YWH-2B-sM9" firstAttribute="top" secondItem="BcW-sJ-6G6" secondAttribute="top" id="BzG-Ci-Bz7"/>
+                            <constraint firstAttribute="bottom" secondItem="YWH-2B-sM9" secondAttribute="bottom" id="hTV-J0-25l"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ym5-4p-NAi"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <connections>
+                        <outlet property="tableView" destination="YWH-2B-sM9" id="IbI-eM-xpE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="95k-NH-Bff" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="969" y="1078"/>
+            <point key="canvasLocation" x="968.79999999999995" y="1070.9145427286358"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="VXI-RF-GtV">
@@ -404,6 +460,7 @@
     </scenes>
     <resources>
         <image name="Explore" width="25" height="25"/>
+        <image name="Following" width="25" height="25"/>
         <image name="Live" width="25" height="25"/>
         <image name="User" width="25" height="25"/>
     </resources>

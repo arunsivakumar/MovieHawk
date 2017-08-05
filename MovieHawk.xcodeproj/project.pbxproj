@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		401D69C71F365E6A00431DB8 /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401D69C61F365E6A00431DB8 /* UserStore.swift */; };
+		401D69C91F365E7100431DB8 /* UserDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401D69C81F365E7100431DB8 /* UserDataSource.swift */; };
+		401D69CB1F365ED600431DB8 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401D69CA1F365ED600431DB8 /* UserTableViewCell.swift */; };
 		4041F0B91F34E0D600FBE4EF /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4041F0B41F34E0D600FBE4EF /* FeedViewController.swift */; };
 		4041F0BB1F34E26900FBE4EF /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4041F0BA1F34E26900FBE4EF /* SearchViewController.swift */; };
 		4041F0BD1F34E28200FBE4EF /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4041F0BC1F34E28200FBE4EF /* UserViewController.swift */; };
@@ -65,6 +68,9 @@
 		270E77F1C145C26E51EF4FFC /* Pods_MovieHawkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieHawkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B9862C71BE14EAE30693DAF /* Pods_MovieHawk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieHawk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EA3F20A85F3DA5376FB2058 /* Pods-MovieHawkUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieHawkUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MovieHawkUITests/Pods-MovieHawkUITests.release.xcconfig"; sourceTree = "<group>"; };
+		401D69C61F365E6A00431DB8 /* UserStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserStore.swift; sourceTree = "<group>"; };
+		401D69C81F365E7100431DB8 /* UserDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataSource.swift; sourceTree = "<group>"; };
+		401D69CA1F365ED600431DB8 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		4041F0B41F34E0D600FBE4EF /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		4041F0BA1F34E26900FBE4EF /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		4041F0BC1F34E28200FBE4EF /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
@@ -173,6 +179,7 @@
 		4041F0B51F34E0D600FBE4EF /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
+				401D69C81F365E7100431DB8 /* UserDataSource.swift */,
 				4041F0C11F34E33300FBE4EF /* SearchDataSource.swift */,
 				4041F0E71F356AEA00FBE4EF /* FeedDataSource.swift */,
 			);
@@ -199,6 +206,7 @@
 		4041F0B81F34E0D600FBE4EF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				401D69CA1F365ED600431DB8 /* UserTableViewCell.swift */,
 				4041F0DC1F3514C400FBE4EF /* MovieCollectionViewCell.swift */,
 				4041F0E91F356B4B00FBE4EF /* FeedTableViewCell.swift */,
 			);
@@ -208,6 +216,7 @@
 		4041F0BE1F34E2C100FBE4EF /* Store */ = {
 			isa = PBXGroup;
 			children = (
+				401D69C61F365E6A00431DB8 /* UserStore.swift */,
 				4041F0BF1F34E2CD00FBE4EF /* MovieStore.swift */,
 				4041F0E31F355A0B00FBE4EF /* FeedStore.swift */,
 			);
@@ -630,6 +639,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4041F0EA1F356B4B00FBE4EF /* FeedTableViewCell.swift in Sources */,
+				401D69C71F365E6A00431DB8 /* UserStore.swift in Sources */,
 				4041F0C41F34E43700FBE4EF /* Movie.swift in Sources */,
 				4041F0C91F34F6CA00FBE4EF /* NetworkHelper.swift in Sources */,
 				4041F0DF1F35241700FBE4EF /* MovieDetailViewController.swift in Sources */,
@@ -641,8 +651,10 @@
 				4041F0BB1F34E26900FBE4EF /* SearchViewController.swift in Sources */,
 				4041F0EE1F36408A00FBE4EF /* NavigationController.swift in Sources */,
 				4041F0BD1F34E28200FBE4EF /* UserViewController.swift in Sources */,
+				401D69C91F365E7100431DB8 /* UserDataSource.swift in Sources */,
 				4041F0B91F34E0D600FBE4EF /* FeedViewController.swift in Sources */,
 				4041F0DD1F3514C400FBE4EF /* MovieCollectionViewCell.swift in Sources */,
+				401D69CB1F365ED600431DB8 /* UserTableViewCell.swift in Sources */,
 				40C4CB841F34DE7300B172CA /* AppDelegate.swift in Sources */,
 				4041F0E61F355ABB00FBE4EF /* ParseHelper.swift in Sources */,
 				4041F0C01F34E2CD00FBE4EF /* MovieStore.swift in Sources */,

@@ -70,7 +70,7 @@ extension AppDelegate{
         
         let navVC2 = tabBarC.viewControllers?[2] as! UINavigationController
         let vc2 = navVC2.topViewController as! UserViewController
-        
+         vc2.store = UserStore()
     }
     
     fileprivate func configureParse(){

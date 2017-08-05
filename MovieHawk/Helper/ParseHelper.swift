@@ -9,6 +9,7 @@
 import Foundation
 import Parse
 
+typealias PFQueryResult = (([PFObject]?,Error?) -> Void)
 
 enum ParseError{
     case success([PFObject])
@@ -32,8 +33,10 @@ class ParseHelper {
     static let movieUser          = "user"
     static let movieCreatedAt     = "createdAt"
     
+    static let username      = "username"
     
-    static func fetchFeed(completion: @escaping ([PFObject]?,Error?) -> Void) {
+    
+    static func fetchFeed(completion: @escaping PFQueryResult)  {
         
         let followingQuery = PFQuery(className: followClass)
         followingQuery.whereKey(followFromUser, equalTo:PFUser.current()!)
@@ -57,5 +60,28 @@ class ParseHelper {
         
     }
     
+    static func fetchFollowingUsers(user: PFUser, completion: @escaping PFQueryResult){
+        let query = PFQuery(className: followClass)
+        print(user.username!)
+        query.whereKey(followFromUser, equalTo:user)
+        query.findObjectsInBackground { (result, error) in
+            completion(result,error)
+        }
+    }
+    
+    static func fetchAllUsers(completion: @escaping PFQueryResult) {
+        let query = PFUser.query()!
+        // exclude the current user
+        query.whereKey(ParseHelper.username,
+                       notEqualTo: PFUser.current()!.username!)
+        query.order(byAscending: username)
+        query.limit = 20
+        
+        query.findObjectsInBackground { (result, error) in
+            completion(result,error)
+        }
+        
+    }
 }
+
 
