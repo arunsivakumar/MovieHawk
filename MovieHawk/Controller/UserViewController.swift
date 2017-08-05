@@ -13,22 +13,33 @@ import UIKit
 class UserViewController: UIViewController {
     
     
-    fileprivate enum SearchState{
-        case none
-        case search
-    }
+//    fileprivate enum SearchState{
+//        case none
+//        case search
+//    }
     
     var store:UserStore!
     
-    fileprivate var searchState: SearchState = .none{
-        
+    @IBOutlet weak var searchBar: UISearchBar!{
         didSet{
-            switch searchState {
-            case .none:
-                fetchUsers(searchTerm: "")
-            case .search:
-                fetchUsers(searchTerm: "")
-            }
+            searchBar.delegate = self
+        }
+    }
+//    fileprivate var searchState: SearchState = .none{
+//        
+//        didSet{
+//            switch searchState {
+//            case .none:
+//                fetchUsers(searchTerm: "")
+//            case .search:
+//                fetchUsers(searchTerm: "")
+//            }
+//        }
+//    }
+    
+    var searchTerm = ""{
+        didSet{
+            fetchUsers(searchTerm: searchTerm)
         }
     }
     
@@ -43,11 +54,11 @@ class UserViewController: UIViewController {
         tableView.dataSource = userDataSource
         tableView.delegate = self
         
-        searchState = .none
+        fetchUsers()
         fetchFollowing()
     }
     
-    func fetchUsers(searchTerm: String){
+    func fetchUsers(searchTerm: String = ""){
         store.fetchUsers (searchTerm: searchTerm){ (result) in
             switch result{
             case let .success(users):
@@ -69,6 +80,24 @@ class UserViewController: UIViewController {
             }
         }
     }
+}
+
+// MARK: Searchbar Delegate
+
+extension UserViewController: UISearchBarDelegate {
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = true
+    }
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchTerm = searchText
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = false
+        searchBar.endEditing(true)
+    }
+    
 }
 
 extension UserViewController: UITableViewDelegate{
