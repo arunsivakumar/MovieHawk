@@ -12,7 +12,25 @@ import UIKit
 
 class UserViewController: UIViewController {
     
+    
+    fileprivate enum SearchState{
+        case none
+        case search
+    }
+    
     var store:UserStore!
+    
+    fileprivate var searchState: SearchState = .none{
+        
+        didSet{
+            switch searchState {
+            case .none:
+                fetchUsers(searchTerm: "")
+            case .search:
+                fetchUsers(searchTerm: "")
+            }
+        }
+    }
     
     fileprivate let userDataSource = UserDataSource()
     
@@ -25,12 +43,12 @@ class UserViewController: UIViewController {
         tableView.dataSource = userDataSource
         tableView.delegate = self
         
-        loadData()
+        searchState = .none
+        fetchFollowing()
     }
     
-    func loadData(){
-
-        store.fetchAllUsers { (result) in
+    func fetchUsers(searchTerm: String){
+        store.fetchUsers (searchTerm: searchTerm){ (result) in
             switch result{
             case let .success(users):
                 self.userDataSource.users = users
@@ -39,7 +57,9 @@ class UserViewController: UIViewController {
             }
             self.tableView.reloadData()
         }
-        
+    }
+    
+    func fetchFollowing(){
         store.fetchFollowing { (result) in
             switch result{
             case let .success(users):

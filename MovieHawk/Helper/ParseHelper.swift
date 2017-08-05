@@ -69,8 +69,13 @@ class ParseHelper {
         }
     }
     
-    static func fetchAllUsers(completion: @escaping PFQueryResult) {
-        let query = PFUser.query()!
+    static func fetchUsers(searchTerm: String, completion: @escaping PFQueryResult) -> PFQuery<PFObject> {
+        var query = PFUser.query()!
+        
+        if searchTerm != ""{
+            query = PFUser.query()!.whereKey(ParseHelper.username,
+                                                 matchesRegex: searchTerm, modifiers: "i")
+        }
         // exclude the current user
         query.whereKey(ParseHelper.username,
                        notEqualTo: PFUser.current()!.username!)
@@ -80,7 +85,7 @@ class ParseHelper {
         query.findObjectsInBackground { (result, error) in
             completion(result,error)
         }
-        
+        return query
     }
 }
 

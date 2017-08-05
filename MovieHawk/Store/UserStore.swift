@@ -19,13 +19,20 @@ enum UserResult{
 
 class UserStore{
     
-    func fetchAllUsers(completion: @escaping UserCompletion){
+    var userQuery: PFQuery<PFObject>?{
+        didSet{
+            oldValue?.cancel()
+        }
+    }
+    
+    func fetchUsers(searchTerm: String, completion: @escaping UserCompletion){
         
-        ParseHelper.fetchAllUsers { (result, error) in
+        userQuery = ParseHelper.fetchUsers (searchTerm: searchTerm){ (result, error) in
             let processResult = self.processRequest(for: result, error: error)
             completion(processResult)
         }
     }
+    
     
     private func processRequest(for result:[PFObject]?, error: Error?) -> UserResult{
         guard let users = result as? [PFUser] else{
