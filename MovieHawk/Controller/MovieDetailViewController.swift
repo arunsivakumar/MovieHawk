@@ -29,12 +29,16 @@ class MovieDetailViewController: UIViewController {
     func loadData(){
          titleLabel.text = movie.title
         descriptionTextField.text = movie.overview
-        movieImageView.kf.setImage(with: movie.posterURL)
+        let url = URL(string: movie.posterURL)
+        movieImageView.kf.setImage(with: url)
     }
     @IBAction func close(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
 
     
+    @IBAction func watch(_ sender: UIButton) {
+        movie.watchMovie()
+    }
 }
 
