@@ -22,12 +22,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let vc = navVC.topViewController as! SearchViewController
         vc.store = MovieStore()
         
+
         
         let configuration = ParseClientConfiguration {
             $0.applicationId = "MovieHawk"
             $0.server = "https://moviehawk-parse-ask.herokuapp.com/parse"
         }
         Parse.initialize(with: configuration)
+        
+        let acl = PFACL()
+        acl.getPublicReadAccess = true
+        PFACL.setDefault(acl, withAccessForCurrentUser: true)
         
         do {
             try PFUser.logIn(withUsername: "test", password: "test")
@@ -40,7 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             print("No logged in user :(")
         }
-        
+        Movie.registerSubclass()
         
         return true
     }
