@@ -17,7 +17,6 @@ class MovieCollectionViewCell: UICollectionViewCell{
             if let movie = movie{
                 let url = URL(string: movie.posterURL)
                 movieImageView.kf.setImage(with: url)
-                
             }
         }
     }

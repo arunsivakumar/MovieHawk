@@ -29,6 +29,10 @@ class Movie: PFObject, PFSubclassing {
         
     }
     
+    override init () {
+        super.init()
+    }
+    
     // PF subclassing
     static func parseClassName() -> String {
         return "Movie"

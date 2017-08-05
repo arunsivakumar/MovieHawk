@@ -39,10 +39,7 @@ class SearchViewController: UIViewController {
             }
             self.collectionView.reloadSections(IndexSet(integer:0))
         }
-        
     }
-    
-    
 }
 
 
