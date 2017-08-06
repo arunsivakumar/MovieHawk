@@ -370,6 +370,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="vEa-Ao-i1t" secondAttribute="bottom" id="xle-rl-6jQ"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="movieImageView" destination="vEa-Ao-i1t" id="J1r-w9-Mfu"/>
                                             <outlet property="userLabel" destination="Jdk-mo-r7j" id="hZn-JR-4Ea"/>
@@ -471,6 +472,6 @@
         <image name="User" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="DKX-h5-tED"/>
+        <segue reference="daf-w3-dh6"/>
     </inferredMetricsTieBreakers>
 </document>
