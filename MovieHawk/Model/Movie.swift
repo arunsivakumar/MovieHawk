@@ -39,9 +39,24 @@ class Movie: PFObject, PFSubclassing {
     }
     
     func watchMovie(){
-        
+//        print(self.user?.username)
         user = PFUser.current()
         saveInBackground()
+    }
+    
+    func findIfUserWatchedMovie(completion: @escaping (Bool) -> Void){
+        ParseHelper.fetchMoviesWatchedByUser() { (result, error) in
+            let movies = result as? [Movie] ?? []
+            
+            let movieWatched = movies.filter ({ $0.id == self.id })
+            
+            if (movieWatched.count) > 0 {
+                completion(true)
+            }else{
+               completion(false)
+            }
+        }
+        
     }
     
 }
