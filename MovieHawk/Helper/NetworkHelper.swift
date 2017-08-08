@@ -22,7 +22,7 @@ enum NetworkResult{
 }
 struct NetworkHelper{
     
-    static func getData(url:String,params: [String:String]?, completion: @escaping NetworkResponse){
+    static func getRequest(url:String,params: [String:String]?, completion: @escaping NetworkResponse){
         
         Alamofire.request(url).validate(statusCode: 200..<300).responseJSON { (response) in
             
