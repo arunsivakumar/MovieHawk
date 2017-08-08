@@ -23,7 +23,27 @@ class MovieDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureUI()
         loadData()
+    }
+    
+    func configureUI(){
+        watchNowButton.setTitle("--", for: .normal)
+        disableWatchButton()
+    }
+    
+    func disableWatchButton(){
+        watchNowButton.setTitle("Watched", for: .normal)
+
+        watchNowButton.isEnabled = false
+        watchNowButton.backgroundColor = Constants.watchButtonDisabledColor
+    }
+    
+    func enableWatchButton(){
+        watchNowButton.setTitle("Watch Now", for: .normal)
+
+        watchNowButton.isEnabled = true
+        watchNowButton.backgroundColor = Constants.watchButtonEnabledColor
     }
     
     func loadData(){
@@ -31,6 +51,11 @@ class MovieDetailViewController: UIViewController {
         descriptionTextField.text = movie.overview
         let url = URL(string: movie.posterURL)
         movieImageView.kf.setImage(with: url)
+        
+        movie.findIfUserWatchedMovie { (result) in
+            result == false ? self.enableWatchButton() : self.disableWatchButton()
+        }
+        
     }
     @IBAction func close(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
@@ -38,6 +63,7 @@ class MovieDetailViewController: UIViewController {
 
     
     @IBAction func watch(_ sender: UIButton) {
+        disableWatchButton()
         movie.watchMovie()
     }
 }
