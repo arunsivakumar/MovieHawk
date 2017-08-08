@@ -30,13 +30,15 @@ class ParseHelper {
     static let watchFromUser      = "fromUser"
     
     // Post Relation
+    static let movieClass       = "Movie"
     static let movieUser          = "user"
+    static let movieId          = "id"
     static let movieCreatedAt     = "createdAt"
     
     static let username      = "username"
     
     
-    static func fetchFeed(completion: @escaping PFQueryResult)  {
+    static func fetchFeed(skip: Int, limit: Int, completion: @escaping PFQueryResult)  {
         
         let followingQuery = PFQuery(className: followClass)
         followingQuery.whereKey(followFromUser, equalTo:PFUser.current()!)
@@ -51,8 +53,8 @@ class ParseHelper {
         query.includeKey(movieUser)
         query.order(byDescending: movieCreatedAt)
         
-        query.skip = 0
-        query.limit = 5
+        query.skip = skip
+        query.limit = limit
         query.findObjectsInBackground { (result, error) in
             completion(result,error)
         }
@@ -114,6 +116,17 @@ class ParseHelper {
                 follow.deleteInBackground(block: nil)
             }
         }
+    }
+    
+    static func fetchMoviesWatchedByUser(completion: @escaping PFQueryResult){
+        let query = PFQuery(className: movieClass).whereKey(movieUser, equalTo: PFUser.current()!)
+        query.includeKey(movieId)
+        
+        query.findObjectsInBackground { (result, error) in
+            completion(result,error)
+        }
+        
+        
     }
 }
 
