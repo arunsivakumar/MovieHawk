@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YWH-2B-sM9">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YWH-2B-sM9">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search Users..." id="TZk-9a-9w5">
@@ -54,6 +54,9 @@
                                                             </constraints>
                                                             <state key="normal" image="User"/>
                                                             <state key="selected" image="Following"/>
+                                                            <connections>
+                                                                <action selector="followUser:" destination="56V-1L-dw2" eventType="touchUpInside" id="Xod-LJ-Kjn"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                 </stackView>
@@ -318,7 +321,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FeedTableViewCell" rowHeight="432" id="Vbo-ba-8FX" customClass="FeedTableViewCell" customModule="MovieHawk" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FeedTableViewCell" rowHeight="432" id="Vbo-ba-8FX" customClass="FeedTableViewCell" customModule="MovieHawk" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="432"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vbo-ba-8FX" id="HxM-W5-yWw">
@@ -373,6 +376,7 @@
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="movieImageView" destination="vEa-Ao-i1t" id="J1r-w9-Mfu"/>
+                                            <outlet property="timeLabel" destination="xDv-Dl-zSv" id="haj-8w-QUF"/>
                                             <outlet property="userLabel" destination="Jdk-mo-r7j" id="hZn-JR-4Ea"/>
                                             <segue destination="kLR-VV-l57" kind="presentation" identifier="showMovie" trigger="accessoryAction" modalPresentationStyle="fullScreen" id="daf-w3-dh6"/>
                                         </connections>

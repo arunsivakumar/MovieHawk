@@ -7,15 +7,15 @@
 //
 
 import Foundation
-
-
 import UIKit
+import DateToolsSwift
 
 class FeedTableViewCell: UITableViewCell {
     
     @IBOutlet weak var userLabel: UILabel!
     @IBOutlet weak var movieImageView: UIImageView!
     @IBOutlet weak var movieTitleLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
     
     
     var movie:Movie?{
@@ -24,21 +24,15 @@ class FeedTableViewCell: UITableViewCell {
                 let url = URL(string: movie.posterURL)
                 movieImageView.kf.setImage(with: url)
                 userLabel.text = movie.user?.username ?? ""
+                timeLabel.text = movie.createdAt?.shortTimeAgo(since: Date()) ?? ""
             }
         }
     }
-
-    
-    let dateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .none
-        return formatter
-    }()
     
     override func prepareForReuse() {
         movieImageView.image = nil
         userLabel.text = nil
+        timeLabel.text = nil
         
     }
     override func awakeFromNib() {
