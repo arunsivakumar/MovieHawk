@@ -13,7 +13,8 @@ target 'MovieHawk' do
       pod 'ParseUI' 
       pod 'Alamofire'
       pod 'SwiftyJSON'
-  target 'MovieHawkTests' do
+      pod 'DateToolsSwift'
+ target 'MovieHawkTests' do
     inherit! :search_paths
     # Pods for testing
   end
