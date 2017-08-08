@@ -12,6 +12,7 @@ import Kingfisher
 class MovieCollectionViewCell: UICollectionViewCell{
     
     @IBOutlet weak var movieImageView: UIImageView!
+    
     var movie:Movie?{
         didSet{
             if let movie = movie{

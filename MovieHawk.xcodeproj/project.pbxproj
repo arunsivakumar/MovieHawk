@@ -37,6 +37,7 @@
 		4041F0EE1F36408A00FBE4EF /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4041F0ED1F36408A00FBE4EF /* NavigationController.swift */; };
 		4041F0F01F3640B600FBE4EF /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4041F0EF1F3640B600FBE4EF /* TabBarController.swift */; };
 		4041F0F31F36413B00FBE4EF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4041F0F21F36413B00FBE4EF /* Constants.swift */; };
+		404CA4A91F3987630006A2EC /* DateToolsSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 404CA4A81F3987630006A2EC /* DateToolsSwift.framework */; };
 		40C4CB841F34DE7300B172CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C4CB831F34DE7300B172CA /* AppDelegate.swift */; };
 		40C4CB8B1F34DE7300B172CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40C4CB8A1F34DE7300B172CA /* Assets.xcassets */; };
 		40C4CB8E1F34DE7300B172CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40C4CB8C1F34DE7300B172CA /* LaunchScreen.storyboard */; };
@@ -98,6 +99,8 @@
 		4041F0ED1F36408A00FBE4EF /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		4041F0EF1F3640B600FBE4EF /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		4041F0F21F36413B00FBE4EF /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		404CA4A61F3984850006A2EC /* SwiftDate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftDate.framework; path = "../../../../Library/Developer/Xcode/DerivedData/MovieHawk-cvgitjmgthtewweeaibpdmurluyx/Build/Products/Debug-iphoneos/SwiftDate/SwiftDate.framework"; sourceTree = "<group>"; };
+		404CA4A81F3987630006A2EC /* DateToolsSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DateToolsSwift.framework; path = "../../../../Library/Developer/Xcode/DerivedData/MovieHawk-cvgitjmgthtewweeaibpdmurluyx/Build/Products/Debug-iphoneos/DateToolsSwift/DateToolsSwift.framework"; sourceTree = "<group>"; };
 		40C4CB801F34DE7300B172CA /* MovieHawk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieHawk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40C4CB831F34DE7300B172CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		40C4CB8A1F34DE7300B172CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -122,6 +125,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				404CA4A91F3987630006A2EC /* DateToolsSwift.framework in Frameworks */,
 				4041F0D61F34F72000FBE4EF /* Bolts.framework in Frameworks */,
 				4041F0D71F34F72000FBE4EF /* FBSDKCoreKit.framework in Frameworks */,
 				4041F0D81F34F72000FBE4EF /* FBSDKLoginKit.framework in Frameworks */,
@@ -325,6 +329,8 @@
 		5C115EA1317B59BDE41EAF5D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				404CA4A81F3987630006A2EC /* DateToolsSwift.framework */,
+				404CA4A61F3984850006A2EC /* SwiftDate.framework */,
 				4041F0D01F34F72000FBE4EF /* Bolts.framework */,
 				4041F0D11F34F72000FBE4EF /* FBSDKCoreKit.framework */,
 				4041F0D21F34F72000FBE4EF /* FBSDKLoginKit.framework */,
