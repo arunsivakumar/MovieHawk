@@ -15,7 +15,7 @@ enum TmdbError: Error{
 
 
 enum TmdbMethod:String{
-    case discoverMovie = "/discover/movie"
+    case discoverMovie = "discover/movie"
 }
 
 class TmdbAPI{
@@ -24,47 +24,52 @@ class TmdbAPI{
     static var posterSizes = ["w92", "w154", "w185", "w342", "w500", "w780", "original"]
     
     
-    private static let baseURLString =  "https://api.themoviedb.org/3/discover/movie?api_key=0707e815068096f71fb530c047ea18b1&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1"
+    //https://api.themoviedb.org/3?language=en-US&api_key=0707e815068096f71fb530c047ea18b1&method=/discover/movie&include_video=false&include_adult=false&sort_by=popularity.desc&page=1
+    
+    private static let baseURLString =  "https://api.themoviedb.org/3/"
+    
     private static let apiKey = "0707e815068096f71fb530c047ea18b1"
     
     private static func constructURL(method:TmdbMethod, parameters:[String:String]?) -> URL{
         
-        var components = URLComponents(string:baseURLString)!
+        var components = URLComponents(string:baseURLString + method.rawValue)!
         
-//        var queryItems = [URLQueryItem]()
-//        
-//        let baseParameters = [
+        var queryItems = [URLQueryItem]()
+        
+        let baseParameters = [
 //            "method": method.rawValue,
-//            "format": "json",
-//            "nojsoncallback": "1",
-//            "api_key": apiKey
-//        ]
-//        
-//        for (key, value) in baseParameters {
-//            let item = URLQueryItem(name: key, value: value)
-//            queryItems.append(item)
-//        }
-//        
-//        if let parameters = parameters{
-//            for(key,value) in parameters{
-//                let item = URLQueryItem(name: key, value: value)
-//                queryItems.append(item)
-//            }
-//        }
+            "api_key": apiKey,
+            "language": "en-US",
+            "include_adult": "false",
+            "include_video" : "false"
+            
+        ]
         
-//        components.queryItems = queryItems
+        for (key, value) in baseParameters {
+            let item = URLQueryItem(name: key, value: value)
+            queryItems.append(item)
+        }
+        
+        if let parameters = parameters{
+            for(key,value) in parameters{
+                let item = URLQueryItem(name: key, value: value)
+                queryItems.append(item)
+            }
+        }
+        
+        components.queryItems = queryItems
         
         return components.url!
     }
 
     
     static var searchURL:URL{
-        return constructURL(method: .discoverMovie, parameters: nil)
+        return constructURL(method: .discoverMovie, parameters: ["sort_by":"popularity.desc","page":"1"])
     }
     
     
     static func movies(from json: JSON) -> MovieResult{
-        print(json)
+//        print(json)
         
         var movieItems = [Movie]()
         
@@ -85,7 +90,7 @@ class TmdbAPI{
     }
     
     private static func movie(from json:JSON) -> Movie?{
-        print(json)
+//        print(json)
         guard
             let id = json["id"].int,
             let title = json["title"].string,
