@@ -61,7 +61,7 @@ extension AppDelegate{
         let navVC0 = tabBarC.viewControllers?[0] as! UINavigationController
         
         let vc0 = navVC0.topViewController as! FeedViewController
-        vc0.store = FeedStore()
+        vc0.store = FeedStore(target: vc0)
         
         
         let navVC1 = tabBarC.viewControllers?[1] as! UINavigationController
