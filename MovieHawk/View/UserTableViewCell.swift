@@ -9,7 +9,10 @@
 import UIKit
 import Parse
 
-
+protocol friendSearchDelegate:class{
+    func followUser(user:PFUser)
+    func unfollowUser(user:PFUser)
+}
 
 class UserTableViewCell: UITableViewCell {
 
@@ -17,23 +20,27 @@ class UserTableViewCell: UITableViewCell {
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var userFollowButton: UIButton!
     
+    weak var delegate:friendSearchDelegate?
     
-    var user:PFUser?{
+    var user:PFUser!{
         didSet{
-            if let user = user{
-                usernameLabel.text = user.username
-            }
+            usernameLabel.text = user.username
         }
     }
     
-    var followingState:Bool? = false{
+    var followingState:Bool = false{
         didSet{
-            if let followingState = followingState{
-                userFollowButton.isSelected = followingState
-            }
+            userFollowButton.isSelected = followingState
         }
     }
     
+    @IBAction func followUser(_ sender: UIButton) {
+        
+        // optimestic UI update
+        
+        followingState == true ?  delegate?.unfollowUser(user: user) : delegate?.followUser(user: user)
+        followingState = !followingState
+    }
     func resetUI(){
         usernameLabel.text = nil
         userFollowButton.isSelected = false
