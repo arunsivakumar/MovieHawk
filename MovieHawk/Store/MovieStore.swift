@@ -23,7 +23,7 @@ class MovieStore{
     func fetchMovies(completion: @escaping MovieCompletion){
         
         let url = TmdbAPI.searchURL.absoluteString
-        NetworkHelper.getData(url: url, params: nil) { (result) in
+        NetworkHelper.getRequest(url: url, params: nil) { (result) in
             let result = self.processRequest(for: result)
             completion(result)
         }

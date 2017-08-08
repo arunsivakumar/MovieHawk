@@ -8,36 +8,60 @@
 
 import UIKit
 
-class FeedViewController: UIViewController {
+class FeedViewController: UIViewController,FeedComponentTarget {
+
+    var feedCompletion: FeedCompletion! = {_ in}
+
+    var skip = 0
+    var limit = 2
     
-    var store:FeedStore!
+    var store:FeedStore<FeedViewController>!
     
-    fileprivate let feedDataSource = FeedDataSource()
+    fileprivate var feedDataSource:FeedDataSource! = nil
     
     @IBOutlet weak var tableView: UITableView!
 
+    private let refreshControl = UIRefreshControl()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+       
         
-        
-        tableView.dataSource = feedDataSource
-        tableView.delegate = self
-        
+        configureTableView()
+        configureCompletion()
         loadData()
     }
     
-    func loadData(){
+    func configureTableView(){
         
-        store.fetchFeed { (feedResult) in
-            switch feedResult{
-            case let .success(movies):
-                self.feedDataSource.movies = movies
-            case .failure(_):
-                self.feedDataSource.movies.removeAll()
+         feedDataSource = FeedDataSource()
+        
+        refreshControl.addTarget(self, action: #selector(loadData), for: .valueChanged)
+        tableView.addSubview(refreshControl)
+        
+        tableView.dataSource = feedDataSource
+        tableView.delegate = self
+    }
+    
+    func configureCompletion(){
+        
+        feedCompletion = { [weak self] results in
+            
+            self?.refreshControl.endRefreshing()
+            
+            switch results {
+            case .success:
+                self?.feedDataSource.movies = (self?.store.movies)!
+            case .failure(_): break
+                
             }
-            self.tableView.reloadData()
+            self?.tableView.reloadData()
         }
+    }
+    
+    func loadData(){
+        self.refreshControl.beginRefreshing()
+        store.loadInitial()
     }
 }
 
@@ -46,6 +70,17 @@ extension FeedViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return self.view.frame.width + 60.0 + 2.0
     }
+    
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        store.targetWillDisplayCell(index: indexPath.row)
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showMovie", sender: self)
+    }
+    
+    
 }
 
 
@@ -58,7 +93,7 @@ extension FeedViewController{
             if let selectedIndexPath =
                 tableView.indexPathForSelectedRow {
                 
-                let movie = feedDataSource.movies[selectedIndexPath.row]
+                let movie = store.movies[selectedIndexPath.row]
                 
                 let vc =
                     segue.destination as! MovieDetailViewController
