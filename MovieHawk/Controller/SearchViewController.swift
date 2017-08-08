@@ -56,7 +56,7 @@ extension SearchViewController: UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let cells = 2
-        print(self.view.frame.width)
+//        print(self.view.frame.width)
         let width = (self.view.frame.width / CGFloat(cells)) - 40.0
         let height = width + 80.0
         return CGSize(width: width, height: height)
