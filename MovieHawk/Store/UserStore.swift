@@ -12,18 +12,22 @@ import Parse
 typealias UserCompletion = (UserResult) -> Void
 
 enum UserResult{
-    case success([PFUser])
+    case success
     case failure(Error)
 }
 
 
 class UserStore{
     
+    var users = [PFUser]()
+    var followingUsers:[PFUser]?
+    
     var userQuery: PFQuery<PFObject>?{
         didSet{
             oldValue?.cancel()
         }
     }
+    
     
     func fetchUsers(searchTerm: String, completion: @escaping UserCompletion){
         
@@ -38,7 +42,8 @@ class UserStore{
         guard let users = result as? [PFUser] else{
             return .failure(error!)
         }
-        return .success(users)
+        self.users = users
+        return .success
     }
     
     private func processRequestForFollowing(for result:[PFObject]?, error: Error?) -> UserResult{
@@ -49,7 +54,8 @@ class UserStore{
         followingUsers = users.map {
             $0.object(forKey: ParseHelper.followToUser) as! PFUser
         }
-        return .success(followingUsers)
+        self.followingUsers = followingUsers
+        return .success
     }
     
     func fetchFollowing(completion: @escaping UserCompletion){
@@ -60,4 +66,16 @@ class UserStore{
         }
         
     }
+    
+    func follow(user:PFUser){
+        followingUsers?.append(user)
+        ParseHelper.followUser(user: user)
+    }
+    
+    func unFollow(user:PFUser){
+        self.followingUsers = followingUsers?.filter { $0 != user}
+        ParseHelper.unfollowUser(user: user)
+    }
+    
+    
 }

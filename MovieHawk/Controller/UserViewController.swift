@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 
-
 class UserViewController: UIViewController {
         
     var store:UserStore!
@@ -26,13 +25,15 @@ class UserViewController: UIViewController {
         }
     }
     
-    fileprivate let userDataSource = UserDataSource()
+    private var userDataSource:UserDataSource! = nil
     
     @IBOutlet weak var tableView: UITableView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        userDataSource = UserDataSource(store: store)
         
         tableView.dataSource = userDataSource
         tableView.delegate = self
@@ -42,25 +43,14 @@ class UserViewController: UIViewController {
     }
     
     func fetchUsers(searchTerm: String = ""){
-        store.fetchUsers (searchTerm: searchTerm){ (result) in
-            switch result{
-            case let .success(users):
-                self.userDataSource.users = users
-            case .failure(_):
-                break
-            }
-            self.tableView.reloadData()
+        store.fetchUsers (searchTerm: searchTerm){ [weak self] (_) in
+            self?.tableView.reloadData()
         }
     }
     
     func fetchFollowing(){
-        store.fetchFollowing { (result) in
-            switch result{
-            case let .success(users):
-                self.userDataSource.followingUsers = users
-                self.tableView.reloadData()
-            default: break
-            }
+        store.fetchFollowing { [weak self] (_) in
+            self?.tableView.reloadData()
         }
     }
 }
@@ -89,3 +79,5 @@ extension UserViewController: UITableViewDelegate{
         return 60.0
     }
 }
+
+

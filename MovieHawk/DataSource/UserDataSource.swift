@@ -16,34 +16,44 @@ import Parse
 
 class UserDataSource:NSObject,UITableViewDataSource{
     
-    var users = [PFUser]()
-    var followingUsers:[PFUser]?
     
+    weak var store:UserStore!
+    
+//    var users = [PFUser]()
+//    var followingUsers:[PFUser]?
+    
+//    weak var vc:UIViewController?
+//    
+    init(store:UserStore) {
+        self.store = store
+        super.init()
+    }
+//
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return users.count
+        return store.users.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UserTableViewCell", for: indexPath)  as! UserTableViewCell
         
-        let user = users[indexPath.row]
+        let user = store.users[indexPath.row]
+        cell.delegate = self
         cell.user = user
         
-        if let followingUsers = followingUsers{
-
-            
-//FIXME:-
-            var userFollowing = false
-            
-            for followingUser in followingUsers{
-                if followingUser.objectId == user.objectId{
-                    userFollowing = true
-                    break
-                }
-            }
-            
-            cell.followingState = userFollowing
+        if let followingUsers = store.followingUsers{
+            cell.followingState = followingUsers.filter{ $0.objectId == user.objectId}.count > 0
         }
         return cell
+    }
+}
+
+
+extension UserDataSource:friendSearchDelegate{
+    func followUser(user: PFUser) {
+        store.follow(user: user)
+    }
+    
+    func unfollowUser(user: PFUser) {
+        store.unFollow(user: user)
     }
 }

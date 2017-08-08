@@ -61,8 +61,11 @@ class ParseHelper {
     }
     
     static func fetchFollowingUsers(user: PFUser, completion: @escaping PFQueryResult){
+        
         let query = PFQuery(className: followClass)
+        
         print(user.username!)
+       
         query.whereKey(followFromUser, equalTo:user)
         query.findObjectsInBackground { (result, error) in
             completion(result,error)
@@ -86,6 +89,31 @@ class ParseHelper {
             completion(result,error)
         }
         return query
+    }
+    
+    static func followUser(user:PFUser){
+        
+        let followObject = PFObject(className: followClass)
+        
+        followObject.setObject(PFUser.current()!, forKey: followFromUser)
+        followObject.setObject(user, forKey: followToUser)
+        
+        followObject.saveInBackground(block: nil)
+    }
+    
+    static func unfollowUser(user:PFUser){
+        
+        let query = PFQuery(className: followClass)
+        
+        query.whereKey(followFromUser, equalTo:PFUser.current()!)
+         query.whereKey(followToUser, equalTo: user)
+        
+        query.findObjectsInBackground { (results, error) in
+            let results = results ?? []
+            for follow in results {
+                follow.deleteInBackground(block: nil)
+            }
+        }
     }
 }
 
