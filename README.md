@@ -28,10 +28,10 @@ $ open MovieHawk.xcworkspace
 - [x] Feed - movies watched by friends
 
 ## Work in progress
-- [] Facebook integeration
-- [] Delete Feed > 1 week
-- [] Search movies
-- [] Consolidate movies on Feed
+- [ ] Facebook integeration
+- [ ] Delete Feed > 1 week
+- [ ] Search movies
+- [ ] Consolidate movies on Feed
 
 ## Screenshots
 
