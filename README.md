@@ -39,4 +39,9 @@ $ open MovieHawk.xcworkspace
 
 ![Screen2](https://github.com/arunsivakumar/MovieHawk/blob/master/screens/screen2.png) 
 
+![Screen1](https://github.com/arunsivakumar/MovieHawk/blob/master/screens/screen3.png) 
+
+![Screen2](https://github.com/arunsivakumar/MovieHawk/blob/master/screens/screen4.png) 
+
+
 [1]: http://www.cocoapods.org
