@@ -9,6 +9,8 @@
 import UIKit
 import Parse
 
+//MARK:-Delegate
+
 protocol friendSearchDelegate:class{
     func followUser(user:PFUser)
     func unfollowUser(user:PFUser)
@@ -16,9 +18,11 @@ protocol friendSearchDelegate:class{
 
 class UserTableViewCell: UITableViewCell {
 
-    
+    //MARK:- Outlets
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var userFollowButton: UIButton!
+    
+    //MARK:- Variables
     
     weak var delegate:friendSearchDelegate?
     
@@ -34,6 +38,8 @@ class UserTableViewCell: UITableViewCell {
         }
     }
     
+      //MARK:- Actions
+    
     @IBAction func followUser(_ sender: UIButton) {
         
         // optimestic UI update
@@ -41,11 +47,14 @@ class UserTableViewCell: UITableViewCell {
         followingState == true ?  delegate?.unfollowUser(user: user) : delegate?.followUser(user: user)
         followingState = !followingState
     }
+    
+      //MARK:- functions
     func resetUI(){
         usernameLabel.text = nil
         userFollowButton.isSelected = false
     }
 
+      //MARK:- View Lifecycle
     
     override func prepareForReuse() {
         resetUI()

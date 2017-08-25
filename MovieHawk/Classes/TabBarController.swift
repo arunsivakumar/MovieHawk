@@ -10,6 +10,10 @@ import UIKit
 
 class TabBarController: UITabBarController {
 
+    
+    //MARK:- Lifecycle
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,6 +26,8 @@ class TabBarController: UITabBarController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    //MARK:- Functions
     
     func configureUI(){
         self.tabBar.unselectedItemTintColor = UIColor.lightGray

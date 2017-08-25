@@ -22,11 +22,27 @@ class UserStore{
     var users = [PFUser]()
     var followingUsers:[PFUser]?
     
+    // holds the last query and cancels if the query parameter changes
+    
     var userQuery: PFQuery<PFObject>?{
         didSet{
             oldValue?.cancel()
         }
     }
+    
+    
+    
+    /**
+     Fetch users
+     
+     - Parameters:
+     - searchTerm: String
+     - completion: UserCompletion.
+     
+     - Returns:
+     Void
+     */
+    
     
     
     func fetchUsers(searchTerm: String, completion: @escaping UserCompletion){
@@ -38,6 +54,19 @@ class UserStore{
     }
     
     
+    /**
+     Process user Request
+     
+     - Parameters:
+     - result: String
+     - completion: UserResult.
+     
+     - Returns:
+     Void
+     */
+    
+    
+    
     private func processRequest(for result:[PFObject]?, error: Error?) -> UserResult{
         guard let users = result as? [PFUser] else{
             return .failure(error!)
@@ -45,6 +74,18 @@ class UserStore{
         self.users = users
         return .success
     }
+    
+    /**
+     Process following Request
+     
+     - Parameters:
+     - result: Optional Array of PFObjects
+     - completion: UserResult.
+     
+     - Returns:
+     Void
+     */
+    
     
     private func processRequestForFollowing(for result:[PFObject]?, error: Error?) -> UserResult{
         guard let users = result else{
@@ -58,6 +99,18 @@ class UserStore{
         return .success
     }
     
+    
+    /**
+     Fetches user following
+     
+     - Parameters:
+     - completion: UserCompletion.
+     
+     - Returns:
+     Void
+     */
+    
+    
     func fetchFollowing(completion: @escaping UserCompletion){
         
         ParseHelper.fetchFollowingUsers (user: PFUser.current()!){ (result, error) in
@@ -66,6 +119,8 @@ class UserStore{
         }
         
     }
+    
+    //MARK:- follow/Unfollow
     
     func follow(user:PFUser){
         followingUsers?.append(user)

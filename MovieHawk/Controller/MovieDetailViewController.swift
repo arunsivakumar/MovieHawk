@@ -12,7 +12,12 @@ import Kingfisher
 
 class MovieDetailViewController: UIViewController {
     
+    //MARK:- Public API
+    
     var movie:Movie!
+    
+    //MARK:- Outlets
+
     
     @IBOutlet weak var descriptionTextField: UITextView!
     @IBOutlet weak var watchNowButton: UIButton!
@@ -20,12 +25,17 @@ class MovieDetailViewController: UIViewController {
     
     @IBOutlet weak var titleLabel: UILabel!
     
+    //MARK:- Lifecycle
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
         loadData()
     }
+    
+    //MARK:- Functions
+
     
     func configureUI(){
         watchNowButton.setTitle("--", for: .normal)
@@ -57,6 +67,10 @@ class MovieDetailViewController: UIViewController {
         }
         
     }
+    
+    //MARK:- Actions
+
+    
     @IBAction func close(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }

@@ -12,11 +12,14 @@ import DateToolsSwift
 
 class FeedTableViewCell: UITableViewCell {
     
+     //MARK:- Outlets
+    
     @IBOutlet weak var userLabel: UILabel!
     @IBOutlet weak var movieImageView: UIImageView!
     @IBOutlet weak var movieTitleLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     
+    //MARK:- Variables
     
     var movie:Movie?{
         didSet{
@@ -28,6 +31,9 @@ class FeedTableViewCell: UITableViewCell {
             }
         }
     }
+    
+    //MARK:- View Lifecycle
+
     
     override func prepareForReuse() {
         movieImageView.image = nil

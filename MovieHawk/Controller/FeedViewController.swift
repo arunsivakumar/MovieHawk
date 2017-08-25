@@ -10,19 +10,28 @@ import UIKit
 
 class FeedViewController: UIViewController,FeedComponentTarget {
 
+     //MARK:- Variables
+    
     var feedCompletion: FeedCompletion! = {_ in}
 
     var skip = 0
     var limit = 2
     
+     fileprivate var feedDataSource:FeedDataSource! = nil
+    
+    //MARK:- Public API
+    
     var store:FeedStore<FeedViewController>!
     
-    fileprivate var feedDataSource:FeedDataSource! = nil
-    
+   
+    //MARK:- Outlets
     @IBOutlet weak var tableView: UITableView!
 
     private let refreshControl = UIRefreshControl()
 
+    
+     //MARK:- Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
        
@@ -31,6 +40,9 @@ class FeedViewController: UIViewController,FeedComponentTarget {
         configureCompletion()
         loadData()
     }
+    
+    //MARK:- Functions
+    
     
     func configureTableView(){
         
@@ -65,6 +77,9 @@ class FeedViewController: UIViewController,FeedComponentTarget {
     }
 }
 
+
+//MARK:- TableView Delegate
+
 extension FeedViewController: UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -83,6 +98,7 @@ extension FeedViewController: UITableViewDelegate{
     
 }
 
+//MARK:- Navigation
 
 extension FeedViewController{
     

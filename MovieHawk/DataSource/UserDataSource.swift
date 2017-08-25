@@ -16,7 +16,7 @@ import Parse
 
 class UserDataSource:NSObject,UITableViewDataSource{
     
-    
+     //MARK:- Public API
     weak var store:UserStore!
     
 //    var users = [PFUser]()
@@ -28,7 +28,8 @@ class UserDataSource:NSObject,UITableViewDataSource{
         self.store = store
         super.init()
     }
-//
+
+     //MARK:- DataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return store.users.count
     }
@@ -46,7 +47,7 @@ class UserDataSource:NSObject,UITableViewDataSource{
         return cell
     }
 }
-
+//MARK:- Cell Delegates
 
 extension UserDataSource:friendSearchDelegate{
     func followUser(user: PFUser) {

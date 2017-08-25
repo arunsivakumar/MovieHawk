@@ -20,6 +20,18 @@ enum MovieResult{
 class MovieStore{
     
     
+    /**
+     Fetches movies by Connecting to TMdb API.
+     
+     - Parameters:
+     - completion: MovieCompletion.
+     
+     - Returns:
+     Void
+     */
+    
+    
+    
     func fetchMovies(completion: @escaping MovieCompletion){
         
         let url = TmdbAPI.searchURL.absoluteString
@@ -29,6 +41,17 @@ class MovieStore{
         }
         
     }
+    
+    /**
+     Process movies from NetworkResult.
+     
+     - Parameters:
+     - for: NetworkResult
+     - completion: MovieResult.
+     
+     - Returns:
+     Void
+     */
     
     
     private func processRequest(for result:NetworkResult) -> MovieResult{

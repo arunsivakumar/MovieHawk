@@ -38,6 +38,8 @@ class Movie: PFObject, PFSubclassing {
         return "Movie"
     }
     
+    //MARK:- functions
+    
     func watchMovie(){
 //        print(self.user?.username)
         user = PFUser.current()

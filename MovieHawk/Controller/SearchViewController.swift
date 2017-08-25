@@ -9,12 +9,19 @@
 import UIKit
 
 class SearchViewController: UIViewController {
+    //MARK:- Public API
     
     var store:MovieStore!
+    
+    //MARK:- Variables
+    
     let searchDataSource = SearchDataSource()
     
+    //MARK:- Outlets
     
     @IBOutlet weak var collectionView: UICollectionView!
+    
+     //MARK:- Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +35,7 @@ class SearchViewController: UIViewController {
         loadData()
     }
     
+     //MARK:- Functions
     
     func loadData(){
         store.fetchMovies { (movieResult) in
@@ -42,7 +50,7 @@ class SearchViewController: UIViewController {
     }
 }
 
-
+//MARK:- CollectionView Delegate
 extension SearchViewController:UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView,
@@ -51,7 +59,7 @@ extension SearchViewController:UICollectionViewDelegate{
         
     }
 }
-
+//MARK:- CollectionView FlowLayout Delegate
 extension SearchViewController: UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -73,7 +81,7 @@ extension SearchViewController: UICollectionViewDelegateFlowLayout{
     }
 }
 
-
+//MARK:- Navigation
 extension SearchViewController{
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

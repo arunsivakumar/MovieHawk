@@ -38,6 +38,18 @@ class ParseHelper {
     static let username      = "username"
     
     
+    
+    /**
+     Method to build Feed
+     
+     - Parameters:
+     - skip: Int
+     - limit: Int
+     - completion: PFQueryResult
+     - Returns:
+     PFQueryResult
+     */
+    
     static func fetchFeed(skip: Int, limit: Int, completion: @escaping PFQueryResult)  {
         
         let followingQuery = PFQuery(className: followClass)
@@ -62,6 +74,16 @@ class ParseHelper {
         
     }
     
+    /**
+     Method to Fetch following userd
+     
+     - Parameters:
+     - user: PFUSer
+     - completion: PFQueryResult
+     - Returns:
+     PFQueryResult
+     */
+    
     static func fetchFollowingUsers(user: PFUser, completion: @escaping PFQueryResult){
         
         let query = PFQuery(className: followClass)
@@ -73,6 +95,16 @@ class ParseHelper {
             completion(result,error)
         }
     }
+    
+    /**
+     Method to Fetch users
+     
+     - Parameters:
+     - searchTerm: String
+     - completion: PFQueryResult
+     - Returns:
+     PFQuery<PFObject>
+     */
     
     static func fetchUsers(searchTerm: String, completion: @escaping PFQueryResult) -> PFQuery<PFObject> {
         var query = PFUser.query()!
@@ -93,6 +125,17 @@ class ParseHelper {
         return query
     }
     
+    /**
+     Method to follow user
+     
+     - Parameters:
+     - user: PFUser
+     - Returns:
+     Void
+     */
+    
+    
+    
     static func followUser(user:PFUser){
         
         let followObject = PFObject(className: followClass)
@@ -102,6 +145,17 @@ class ParseHelper {
         
         followObject.saveInBackground(block: nil)
     }
+    
+    
+    /**
+     Method to unfollow user
+     
+     - Parameters:
+     - user: PFUser
+     - Returns:
+     Void
+     */
+    
     
     static func unfollowUser(user:PFUser){
         
@@ -117,6 +171,15 @@ class ParseHelper {
             }
         }
     }
+    
+    /**
+     Method to fetch movies watched by user
+     
+     - Parameters:
+     - completion: PFQueryResult
+     - Returns:
+     Void
+     */
     
     static func fetchMoviesWatchedByUser(completion: @escaping PFQueryResult){
         let query = PFQuery(className: movieClass).whereKey(movieUser, equalTo: PFUser.current()!)

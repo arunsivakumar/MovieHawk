@@ -10,14 +10,20 @@ import Foundation
 import UIKit
 
 class UserViewController: UIViewController {
-        
+    
+    //MARK:- Public API
+    
     var store:UserStore!
+    
+    //MARK:- Outlets
     
     @IBOutlet weak var searchBar: UISearchBar!{
         didSet{
             searchBar.delegate = self
         }
     }
+    
+    //MARK:- Variables
     
     var searchTerm = ""{
         didSet{
@@ -27,8 +33,11 @@ class UserViewController: UIViewController {
     
     private var userDataSource:UserDataSource! = nil
     
+     //MARK:- Outlets
+    
     @IBOutlet weak var tableView: UITableView!
     
+    //MARK:- Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,6 +81,8 @@ extension UserViewController: UISearchBarDelegate {
     }
     
 }
+
+//MARK:- Tableview Delegate
 
 extension UserViewController: UITableViewDelegate{
     

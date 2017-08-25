@@ -11,7 +11,11 @@ import UIKit
 
 class FeedDataSource:NSObject,UITableViewDataSource{
     
+    //MARK:- Public API
+    
     var movies = [Movie]()
+    
+      //MARK:- DataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movies.count

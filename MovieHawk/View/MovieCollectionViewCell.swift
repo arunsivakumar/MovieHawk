@@ -11,7 +11,11 @@ import Kingfisher
 
 class MovieCollectionViewCell: UICollectionViewCell{
     
+    //MARK:- Outlets
+    
     @IBOutlet weak var movieImageView: UIImageView!
+    
+    //MARK:- Variables
     
     var movie:Movie?{
         didSet{
@@ -22,6 +26,7 @@ class MovieCollectionViewCell: UICollectionViewCell{
         }
     }
     
+     //MARK:- View Lifecycle
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -20,6 +20,8 @@ enum TmdbMethod:String{
 
 class TmdbAPI{
     
+    //MARK:- Static Variables
+    
     static var secureBaseImageURLString =  "https://image.tmdb.org/t/p/"
     static var posterSizes = ["w92", "w154", "w185", "w342", "w500", "w780", "original"]
     
@@ -29,6 +31,19 @@ class TmdbAPI{
     private static let baseURLString =  "https://api.themoviedb.org/3/"
     
     private static let apiKey = "0707e815068096f71fb530c047ea18b1"
+    
+    
+    
+    /**
+     Constructs TmdbAPI URL.
+     
+     - Parameters:
+     - method:TmdbAPI API Endpoint.
+     - parameters: Query items.
+     - Returns: URL constructed from method,base parameters and additional parameters.
+     */
+    
+    
     
     private static func constructURL(method:TmdbMethod, parameters:[String:String]?) -> URL{
         
@@ -68,6 +83,15 @@ class TmdbAPI{
     }
     
     
+    
+    /**
+     Method to convert json to movies
+     
+     - Parameters:
+     - from: JSON
+     - Returns: MovieResult
+     */
+    
     static func movies(from json: JSON) -> MovieResult{
 //        print(json)
         
@@ -88,6 +112,15 @@ class TmdbAPI{
         }
         return .success(movieItems)
     }
+    
+    /**
+     Method to convert json to movie
+     
+     - Parameters:
+     - from:JSON
+     - Returns: Movie
+     */
+    
     
     private static func movie(from json:JSON) -> Movie?{
 //        print(json)

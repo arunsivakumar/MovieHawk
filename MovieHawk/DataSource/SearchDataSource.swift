@@ -10,7 +10,13 @@ import Foundation
 import UIKit
 
 class SearchDataSource:NSObject,UICollectionViewDataSource{
+    
+    //MARK:- Public API
+    
     var movies = [Movie]()
+    
+     //MARK:- DataSource
+    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return movies.count
